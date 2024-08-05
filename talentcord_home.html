@@ -1,0 +1,252 @@
+<html>
+<head>
+<title>Talentcord Log In Page Index2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+
+
+var  timerId=0 ;
+
+
+
+function clearTimer() {
+  if (timerId!=0) {
+    clearTimeout(timerId); timerId=0; }}
+
+
+
+function startTimer() {
+  clearTimer(); timerId=setTimeout('timerId=0;hideMenus()',200); }
+
+
+
+function showMenu(menuNum) {
+  clearTimer(); hideMenus();
+  document.getElementById('menu_'+menuNum).style.display=""; }
+
+
+
+function hideMenus() {
+  var  i=2 ;
+  while (document.getElementById('menu_'+i)) {
+    document.getElementById('menu_'+i).style.display="none";
+    i++; }}
+
+
+
+function hiLite(theOption) {
+  clearTimer();
+  document.getElementById('opt_'+theOption).style.color='#41b9ce'; }
+
+
+
+function unLite(theOption) {
+  startTimer();
+  document.getElementById('opt_'+theOption).style.color='#000000'; }
+
+
+
+function optClick(theOption) {
+  unLite(theOption); clearTimer(); hideMenus();
+  alert('You clicked option '+theOption.toUpperCase()+'.  '+
+  'This code should actually do something in response to that.'); }
+
+
+
+//-->
+</SCRIPT>
+
+
+<STYLE TYPE="text/css">
+<!--
+
+.popupMenu {
+  font-family     : Roboto,Helvetica,Arial;
+  font-size       :     14px;
+  color      	  :  #41b9ce;
+  position        : absolute;
+  top             :     120px;
+  border          :      1px;
+  padding         :      2px;
+  z-index         :       16;
+  background-color:  #FFFFFF;
+  cursor          :  pointer; }
+
+-->
+</STYLE>
+</head>
+<body onclick="hideMenus();" bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Talentcord Log In Page Index2.psd) -->
+<table id="Table_01" align="center" width="1025" height="770" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="10">
+			<img src="images/talentcord_home_01.gif" width="1024" height="25" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="25" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<img src="images/talentcord_home_02.gif" width="729" height="14" alt=""></td>
+		<td rowspan="5">
+			<img src="images/Talentcord-Log-In-Page-Index2_03.gif" width="145" height="91" alt=""
+			onmouseover="this.src='images/Talentcord-Log-In-Page-Index2_up_03.gif';showMenu(2);"
+            onmouseout="this.src='images/Talentcord-Log-In-Page-Index2_03.gif';startTimer();"
+			></td>
+		<td rowspan="5">&nbsp;			</td>
+		<td colspan="2" rowspan="5">
+			<a href="talentcord" 
+			onclick="location.href='register.php';return false;" >
+			<img src="images/Talentcord-Log-In-Page-Index2_05.gif" width="145" height="91" alt=""
+			onmouseover="this.src='images/Talentcord-Log-In-Page-Index2_up_05.gif';"
+            onmouseout="this.src='images/Talentcord-Log-In-Page-Index2_05.gif';"></a>
+			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="14" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/talentcord_home_06.gif" width="256" height="50" alt=""></td>
+		<td colspan="4">
+			<img src="images/talentcord_home_07.gif" width="473" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/talentcord_home_08.gif" width="16" height="160" alt=""></td>
+		<td colspan="3" rowspan="4">&nbsp;			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="49" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/talentcord_home_10.gif" width="256" height="22" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">&nbsp;			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+		<DIV CLASS="popupMenu" ID="menu_2" STYLE="display:none;">
+			<TABLE BORDER="0" CELLSPACING="4" CELLPADDING="0">
+			<TR ID="opt_seek"><TD><A ONMOUSEOVER="hiLite('seek')" ONMOUSEOUT="unLite('seek')" onclick="location.href='index.php?acct=seek';return false;" >&nbsp;&nbsp;as job seeker&nbsp;&nbsp;</A></TD></TR>
+			<TR ID="opt_seek" bgcolor="#41b9ce"><TD><img src="images/spacer.gif" width="135" height="1" alt=""></TD></TR>
+			<TR ID="opt_emp"><TD><A ONMOUSEOVER="hiLite('emp')" ONMOUSEOUT="unLite('emp')" onclick="location.href='index.php?acct=emp';return false;">&nbsp;&nbsp;as employer&nbsp;&nbsp;</A></TD></TR>
+			<TR ID="opt_emp" bgcolor="#41b9ce"><TD><img src="images/spacer.gif" width="135" height="1" alt=""></TD></TR>
+			</TABLE>
+		</DIV>
+		</td>
+		<td rowspan="4">
+			<img src="images/talentcord_home_13.gif" width="5" height="235" alt=""></td>
+		<td colspan="2" rowspan="4">&nbsp;			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="84" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="8">&nbsp;			</td>
+		<td colspan="3">
+			<img src="images/talentcord_home_16.gif" width="193" height="79" alt=""></td>
+		<td rowspan="2">
+			<img src="images/talentcord_home_17.gif" width="224" height="80" alt=""></td>
+		<td rowspan="2">
+			<img src="images/talentcord_home_18.gif" width="196" height="80" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="79" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3" rowspan="2">
+			<img src="images/talentcord_home_19.gif" width="193" height="72" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/talentcord_home_20.gif" width="224" height="71" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_21.gif" width="196" height="71" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="71" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/talentcord_home_22.gif" width="193" height="83" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_23.gif" width="224" height="83" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_24.gif" width="196" height="83" alt=""></td>
+		<td colspan="3" rowspan="2">
+			<img src="images/talentcord_home_25.gif" width="213" height="156" alt=""></td>
+		<td rowspan="5">&nbsp;			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="83" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/talentcord_home_27.gif" width="193" height="73" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_28.gif" width="224" height="73" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_29.gif" width="196" height="73" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="73" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/talentcord_home_30.gif" width="193" height="81" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_31.gif" width="224" height="81" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_32.gif" width="196" height="81" alt=""></td>
+		<td colspan="3" rowspan="3">&nbsp;			</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="81" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/talentcord_home_34.gif" width="193" height="111" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_35.gif" width="224" height="111" alt=""></td>
+		<td>
+			<img src="images/talentcord_home_36.gif" width="196" height="111" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="111" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="5">
+			<img src="images/talentcord_home_37.gif" width="613" height="70" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="70" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="116" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="140" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="16" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="37" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="224" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="196" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="145" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="5" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="63" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="82" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>

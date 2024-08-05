@@ -1,0 +1,2612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+                
+<title>Job Seeker Portal</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="assets_files/js_universal.css" type="text/css">
+<script src="/cgi-bin/protoculous-4.cgi"></script>
+<script src="/cgi-bin/js.cgi"></script>
+<script type="text/javascript">dynamic_dd_max_options=0;</script>
+<!--Language-specific styles-->
+
+
+<link rel="stylesheet" type="text/css" href="assets_files/calendar-hrsmart.css">
+<script src="assets_files/ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+<style type="text/css">
+.whitespace {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+pre {
+ font-family: Verdana,Helvetica,Arial,sans-serif;
+ font-size: 10px;
+ line-height: 14px;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+</style>
+<script language="JavaScript" src="/cgi-bin/js_002.cgi"></script>
+<script language="JavaScript" src="assets_files/load_calendar_js.js"></script>
+<link rel="stylesheet" href="assets_files/niftyCorners.css" type="text/css">
+<link rel="stylesheet" href="assets_files/jquery.css" type="text/css">
+<script type="text/javascript">dynamic_dd_max_options=0;</script>
+<script src="assets_files/jquery-1.js"></script>
+<script src="assets_files/jquery.js"></script>
+<script>
+function init () {}
+$.noConflict();
+jQuery(document).ready(function($) {
+    var elems = $('.tipped')
+    .each(function(i) {
+        $.attr(this,'tooltip', $.attr(this,'title'));
+    })
+    .removeAttr('title');
+
+    $('<div />').qtip({
+        content: ' ',
+        position: {
+            target: 'event'
+        },
+        show: {
+            target: elems
+        },
+        hide: {
+            target: elems
+        },
+        events: {
+            show: function(event, api) {
+                var target = $(event.originalEvent.target);
+                if(target.length) {
+                    var content_div = target.closest('span').attr('data-tipped');
+                    var data = $("#" + content_div).find('img')[0];
+                    if ( !data ) {
+                        data = target.attr('oldtitle');
+                        if( !data ) {
+                            data = target.attr('tooltip');
+                        }
+                    }
+                    api.set('content.text', data);
+                }
+            }
+        },
+        style: {
+            classes: 'ui-tooltip-light ui-tooltip-tipped'
+        }
+    });
+
+    var ajax = $('.tipped-ajax')
+    .each(function(i) {
+        $(this).qtip({
+            content: {
+                text: '<img src="/images/ajax-loader.gif" border="0" />',
+                ajax: {
+                    url: $(this).attr('data-tipped'),
+                    type: 'POST',
+                    data: jQuery.parseJSON($(this).attr('data-tipped-options'))
+                }
+            },
+            hide: {
+                event: 'unfocus mouseleave',
+                delay: 500,
+                fixed: true
+            },
+            style: {
+                classes: 'ui-tooltip-light ui-tooltip-tipped'
+            }
+        })
+    });
+});
+</script>
+
+<script src="assets_files/ck_language_config.js" type="text/javascript"></script>
+<link href="assets_files/editor_gecko.css" type="text/css" rel="stylesheet">
+<script src="assets_files/en.js" type="text/javascript"></script>
+<script src="assets_files/styles.js" type="text/javascript"></script>
+<script src="assets_files/plugin.js" type="text/javascript"></script>
+<script src="assets_files/en_002.js" type="text/javascript"></script>
+<link href="assets_files/aspell.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body><div id="safari_fix" style="display:none;"><p></p><h3>This site requires cookies to function. By clicking <a href="https://forever21.tms.hrdepartment.com/cgi-bin/a/accept_cookies.cgi" target="_blank">here</a> you consent to the use of cookies. Cookies will be used strictly for the functioning of the site.</h3><p></p></div>
+
+<script type="text/javascript">
+function getCookie(c_name)
+{
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++)
+    {
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if (x==c_name)
+        {
+            return unescape(y);
+        }
+    } 
+}   
+var haslangcookie = getCookie("language");
+if(self != top && (haslangcookie == null || haslangcookie == ""))
+{
+    var browser = navigator.userAgent;
+    if (browser.toLowerCase().indexOf('safari') > 0 && browser.toLowerCase().indexOf('chrome') <= 0)
+    {
+          document.getElementById("safari_fix").style.display="block";
+    }
+}
+</script>
+
+<link rel="stylesheet" href="assets_files/js_custom.css" type="text/css">
+
+<div id="tms_skip_navigation_link">
+<a class="skip_navigation" href="#tms_content"><img src="assets_files/spacer.gif" alt="Skip Navigation" border="0"></a>
+</div>
+<div id="logo">
+<img src="assets_files/f21logo.gif" alt="Forever 21" title="Forever 21">
+</div>
+<div id="headercopy">
+
+<p>Celebrated for over 25 years by style conscious and trend-savvy 
+shoppers across the globe, Forever 21 has set the fashion industry on 
+fire by showcasing the most current collections, on-trend apparel, and 
+exciting shopping environments.</p><p>When you join the Forever 21 
+family, you will enjoy a fast-paced, exciting work environment with 
+tremendous opportunities for growth.  We are committed to challenging 
+fashion boundaries, acting on behalf of our customers, and demonstrating
+ passion in all that we do.</p>Forever 21 is committed to nurturing your
+ talents and supporting your career goals with our fun work environment,
+ team culture, and core values.<p></p>
+
+</div>
+<hr>
+<p id="tmsnav">
+	<a class="reg_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/searchjobs_quick.cgi">Search our Careers</a> &nbsp;
+	<a class="reg_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/editprofile.cgi">Submit Resume</a> &nbsp;
+	<a class="reg_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/mycenter.cgi">Career Center</a> &nbsp;
+	<a class="reg_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/faqs_ext-js.cgi">FAQs</a> &nbsp;
+	<a class="reg_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/applicantlogout.cgi">Logout</a>
+</p>
+<hr>
+<div id="tms-content">
+
+<div></div>
+
+<a name="tms_content"></a>
+
+<span class="pagetitle" id="pagetitle_editprofile">Your Resume Profile</span>
+<script language="JavaScript">
+var bypassquestionvalidation=0;
+</script>
+<form name="profile" id="mainform" method="POST" action="/cgi-bin/a/editprofile.cgi" onsubmit="if (!(bypassquestionvalidation)) { if ( typeof validate_questions == 'function' ) { if (!validate_questions(this)) { return false; } } } return validate_form();">
+<input name="raf" value="" type="hidden">
+
+<br>
+  <div class="tms_profile_row">
+        <p> If you already have your resume in a MS Word, WordPerfect, 
+etc., you can upload it to save time. By uploading, the system will be 
+able to extract certain information and populate the Resume Profile 
+form. After doing so, you will have the opportunity to add or modify any
+ of the information in the form. <span class="required">*</span> = Required</p>
+        <p>
+      
+            <a class="button_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/resumeparse.cgi?jobid=&amp;referralsource=" style="text-decoration:none">Upload your Resume</a>
+            
+            
+            <span id="use_linkedin_and_javascript_supported" style="">
+            
+            or
+            
+            <a class="button_js" href="https://forever21.tms.hrdepartment.com/cgi-bin/a/import_from_linkedin.cgi?jobid=&amp;referralsource=" style="text-decoration: none;" id="linkedin_noiframe">Import from LinkedIn</a>
+            <a class="button_js" href="#" onclick="window.open('/cgi-bin/a/import_from_linkedin.cgi?jobid=&amp;referralsource=&amp;iframe=true', 'linkedin', 'resizable=yes,scrollbars=yes,width=600,height=450');return false" style="text-decoration:none;display:none" id="linkedin_iframe">Import from LinkedIn</a>
+            </span>
+            
+        </p>
+        <p>If you don't wish to upload your resume, please complete the Resume Profile below.</p>
+        <script language="javascript">
+        <!--
+
+        //if javascript is enabled unhide LinkedIn
+        if (document.getElementById('use_linkedin_and_javascript_supported')) {
+            document.getElementById('use_linkedin_and_javascript_supported').style.display = '';
+        }
+
+        //if we are in an iframe use a pop-up window to authenticate to LinkedIn
+        if (document.getElementById('linkedin_'+(self == top ? 'no' : '')+'iframe')) {
+            document.getElementById('linkedin_'+(self == top ? 'no' : '')+'iframe').style.display = '';
+        }
+
+        //-->
+        </script>
+
+
+
+
+  </div>
+
+<script language="JavaScript">
+    document.observe('dom:loaded', function() {
+        if (typeof attach_calendar_to_images == 'function') {
+            attach_calendar_to_images();
+        }
+    });
+</script>
+
+<script language="JavaScript">
+function validate_form()
+{
+    if (bypassquestionvalidation) {
+        // The user hit "Finish Later": Special case
+        // Check: Email, Username, Password
+        var flErrors = 0;
+        var flMsg = "";
+        if ($('email').value == "" || !chkemail( $('email') )) {
+            flErrors++;
+            flMsg = flMsg + "Missing email.\n";
+        }
+        if ($('username') && $('username').value == "") {
+            flErrors++;
+            flMsg = flMsg + "Missing username.\n";
+        }
+        if ($('password') && $('password').value == "") {
+            flErrors++;
+            flMsg = flMsg + "Missing password.\n";
+        } else if ($('password') && $('password2') && $('password').value != $('password2').value) {
+            flErrors++;
+            flMsg = flMsg + "The two passwords entered don't match.\n";
+        }
+        bypassquestionvalidation = 0;
+        if (flErrors == 0) {
+            return true;
+        } else {
+            alert("To finish later, you must fill out at least 3 fields:  Email, Username, and Password.\n\n" + flMsg);
+            return false;
+        }
+    }
+
+	var checkField = $('email');
+	if(checkField != undefined )
+	{
+		if( !chkemail(checkField))
+		{
+			alert("Invalid Email");
+			return false;
+		}
+	}
+
+
+
+
+
+
+    if( $('compensation') && $('compensation').value != '' && ! $('compensation').value.match(/^\d+$/) )
+    {
+        alert("Please only use whole numbers in the Desired Compensation field.");
+        return false;
+    }
+
+	if ( document.profile.relocate && $('relocatecomments') &&
+			( document.profile.relocate[0].checked || document.profile.relocate[2].checked ) && $('relocatecomments').selectedIndex == -1 )
+	{
+			alert("Please select possible relocation options.");
+			return false;
+	}
+
+	if( $('agree2terms').checked )
+	{
+    var lost_data = new Array();
+    if (
+		(
+		  $('workhistory_company_name') && $('workhistory_job_title') && $('workhistory_company_location') &&
+          $('workhistory_start_date') && $('workhistory_end_date') &&
+		  $('workhistory_job_description')
+		) &&
+	    ( $('workhistory_company_name').value != '' || $('workhistory_job_title').value != '' ||
+          $('workhistory_company_location').value != '' || $('workhistory_start_date').value != '' ||
+          $('workhistory_end_date').value != '' || $('workhistory_job_description').value != ''
+		)
+	   )
+    {
+      lost_data.push( "Work History" );
+    }
+    if (
+		(
+		  $('eduhistory_school_name') && $('eduhistory_school_location') && $('eduhistory_degree_level') &&
+		  $('eduhistory_end_date') && $('eduhistory_school_description')
+		) &&
+		( $('eduhistory_school_name').value != '' || $('eduhistory_school_location').value != '' ||
+          $('eduhistory_degree_level').value != '' ||
+          $('eduhistory_end_date').value != '' || $('eduhistory_school_description').value != ''
+		)
+	   )
+    {
+      lost_data.push( 'Education' );
+    }
+    if (
+		(
+		  $('certhistory_name') && $('certhistory_start_date') &&
+		  $('certhistory_end_date') && $('certhistory_description')
+		) &&
+		( $('certhistory_name').value != '' ||
+          $('certhistory_start_date').value != '' ||
+          $('certhistory_end_date').value != '' || $('certhistory_description').value != ''
+		)
+	   )
+    {
+      lost_data.push( 'Certification' );
+    }
+    if ( $('references_name') && $('references_note') &&
+		( $('references_name').value != '' || $('references_note').value != '' )
+	   )
+    {
+      lost_data.push( 'References' );
+    }
+    var lost_data_list;
+    if ( lost_data.length == 0 )
+    {
+      return true;
+    }
+    else if ( lost_data.length == 1)
+    {
+      lost_data_list = lost_data.pop();
+    }
+    else
+    {
+      var last_entry = lost_data.pop();
+      lost_data_list = lost_data.join( ', ' );
+      lost_data_list = lost_data_list + ' and ' + last_entry;
+    }
+		return confirm( "There is data for " + lost_data_list + " that has not been added to the summary. Only data located in the summary will be saved. If you continue this data will be lost." );
+	}
+	else
+	{
+		alert( "You must agree to the Terms of Service." );
+		return false;
+	}
+}
+
+</script>
+
+
+<br>
+<span class="tableheader tableline">General Information (Please complete ALL required (<span style="color:red">*</span>) fields on the resume form)</span>
+<div id="general_block">
+
+<!-- START general_block -->
+<div class="tms_profile_table" id="tms_profile_row_fname">
+	<div class="tms_profile_row">
+	  <span class="tdcolor tms_profile_left"><label for="fname">First Name: <span class="required">*</span></label></span>
+	  <span class="tdcolor2 tms_profile_right"><input id="fname" name="fname" maxlength="30" size="25" alt="First Name" type="text"></span>
+	</div>
+
+	<div class="tms_profile_row" id="tms_profile_row_mname">
+	  <span class="tdcolor tms_profile_left"><label for="mname">Middle Initial: <span id="mname_label" class=""></span></label></span>
+	  <span class="tdcolor2 tms_profile_right"><input id="mname" name="mname" maxlength="30" size="2" alt="Middle Initial" type="text"> </span>
+	</div>
+
+        <div class="tms_profile_row" id="tms_profile_row_lname">
+          <span class="tdcolor tms_profile_left"><label for="lname">Last Name: <span class="required">*</span></label></span>
+          <span class="tdcolor2 tms_profile_right"><input id="lname" name="lname" maxlength="30" size="25" alt="Last Name" type="text">
+          </span>
+        </div>
+
+
+        <div class="tms_profile_row" id="tms_profile_row_suffixname">
+          <span class="tdcolor tms_profile_left"><label for="suffixname">Suffix:  <span class=""></span></label></span>
+          <span class="tdcolor2 tms_profile_right"><input id="suffixname" name="suffixname" maxlength="10" size="3" alt="Suffix" type="text"> </span>
+        </div>
+
+
+    <div class="tms_profile_row" id="tms_profile_row_email">
+        <span class="tdcolor tms_profile_left"><label for="email">Email Address: <span class="required">*</span></label></span>
+        <span class="tdcolor2 tms_profile_right"><input id="email" name="email" maxlength="75" size="35" alt="Email Address" type="text">&nbsp;</span>
+    </div>
+
+
+
+
+
+
+
+
+
+      </div>
+<!-- END general_block --> </div>
+
+<br>
+<span class="tableheader tableline">Contact Information</span>
+<div id="contact_block"><!-- START contact_block -->
+<div class="tms_profile_table">
+
+	<div class="tms_profile_row" id="tms_profile_row_phone1">
+		<span class="tdcolor tms_profile_left"><label for="phone1"><span id="phone1_label">Primary Phone:</span>  <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="phone1" name="phone1" size="20" alt="Primary Phone" type="text"> </span>
+	</div>
+
+
+
+	<div class="tms_profile_row" id="tms_profile_row_phone2">
+		<span class="tdcolor tms_profile_left"><label for="phone2">Secondary Phone:<span id="phone2_label" class=""></span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="phone2" name="phone2" size="20" alt="Secondary Phone" type="text"> </span>
+	</div>
+
+
+	<div class="tms_profile_row" id="tms_profile_row_address1">
+		<span class="tdcolor tms_profile_left"><label for="address1"><span id="address1_label">Address</span>: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="address1" name="address1" size="35" alt="Address" type="text"></span>
+	</div>
+
+
+	<div class="tms_profile_row" id="tms_profile_row_address2">
+		<span class="tdcolor tms_profile_left"><label for="address2">Address 2: <span id="address2_label" class=""></span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="address2" name="address2" size="20" alt="Address 2" type="text"> </span>
+	</div>
+
+
+	<div class="tms_profile_row" id="tms_profile_row_city">
+		<span class="tdcolor tms_profile_left"><label for="city"><span id="city_label">City</span>: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="city" name="city" size="20" alt="City" type="text"></span>
+	</div>
+
+	<div class="tms_profile_row" id="tms_profile_row_state">
+		<span class="tdcolor tms_profile_left"><label for="state"><span id="state_label">State/Province</span>: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="state" name="state" size="3" alt="State/Province" type="text"> <img src="assets_files/info_small.gif" title="If this field is not applicable to your Country, please enter 'n/a'." alt="If this field is not applicable to your Country, please enter 'n/a'.">
+		</span>
+	</div>
+
+	<div class="tms_profile_row" id="tms_profile_row_zip">
+		<span class="tdcolor tms_profile_left"><label for="zip"><span id="zip_label">Zip/Postal Code</span>: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="zip" name="zip" size="10" alt="Zip/Postal Code" type="text"></span>
+	</div>
+
+	<div class="tms_profile_row" id="tms_profile_row_country">
+		<span class="tdcolor tms_profile_left"><label for="country"><span id="country_label">Country</span>: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right">
+        <select name="country" id="country">
+        
+<option selected="selected" value="AU" title="Australia">Australia</option>
+<option value="AT" title="Austria">Austria</option>
+<option value="BD" title="Bangladesh">Bangladesh</option>
+<option value="BE" title="Belgium">Belgium</option>
+<option value="CA" title="Canada">Canada</option>
+<option value="CN" title="China">China</option>
+<option value="CO" title="Colombia">Colombia</option>
+<option value="DO" title="Dominican Republic">Dominican Republic</option>
+<option value="FR" title="France">France</option>
+<option value="DE" title="Germany">Germany</option>
+<option value="HK" title="Hong Kong">Hong Kong</option>
+<option value="IN" title="India">India</option>
+<option value="IE" title="Ireland">Ireland</option>
+<option value="IL" title="Israel">Israel</option>
+<option value="IT" title="Italy">Italy</option>
+<option value="JP" title="Japan">Japan</option>
+<option value="KR" title="Korea, Republic Of">Korea, Republic Of</option>
+<option value="MX" title="Mexico">Mexico</option>
+<option value="NL" title="Netherlands">Netherlands</option>
+<option value="PH" title="Philippines">Philippines</option>
+<option value="PR" title="Puerto Rico">Puerto Rico</option>
+<option value="ES" title="Spain">Spain</option>
+<option value="UK" title="United Kingdom">United Kingdom</option>
+<option value="US" title="United States">United States</option>
+<option value="VN" title="Viet Nam">Viet Nam</option>
+        </select>
+		</span>
+	</div>
+
+    <div class="tms_profile_row" id="tms_profile_row_timezone">
+        <span class="tdcolor tms_profile_left"><label for="timezone"><span id="timezone_label">Time Zone</span>: <span class="required">*</span></label></span>
+        <span class="tdcolor2 tms_profile_right">
+            
+            <select name="timezone" id="timezone"><option value="-12:00">(GMT-12:00) International Date Line West</option>
+<option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
+<option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
+<option value="America/Anchorage">(GMT-09:00) Alaska</option>
+<option value="America/Los_Angeles" selected="selected">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+<option value="America/Tijuana">(GMT-08:00) Tijuana, Baja California</option>
+<option value="America/Phoenix">(GMT-07:00) Arizona</option>
+<option value="America/Chihuahua">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+<option value="America/Denver">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+<option value="America/Cancun">(GMT-06:00) Central America</option>
+<option value="America/Chicago">(GMT-06:00) Central Time (US &amp; Canada)</option>
+<option value="America/Mexico_City">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+<option value="America/Regina">(GMT-06:00) Saskatchewan</option>
+<option value="America/Bogota">(GMT-05:00) Bogota, Lima, Quito</option>
+<option value="America/New_York">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+<option value="America/Indiana/Indianapolis">(GMT-05:00) Indiana (East)</option>
+<option value="America/Caracas">(GMT-04:30) Caracas</option>
+<option value="America/Asuncion">(GMT-04:00) Asuncion</option>
+<option value="America/Halifax">(GMT-04:00) Atlantic Time (Canada)</option>
+<option value="America/La_Paz">(GMT-04:00) Georgetown, La Paz, San Juan</option>
+<option value="America/Manaus">(GMT-04:00) Manaus</option>
+<option value="America/Santiago">(GMT-04:00) Santiago</option>
+<option value="America/St_Johns">(GMT-03:30) Newfoundland</option>
+<option value="America/Sao_Paulo">(GMT-03:00) Brasilia</option>
+<option value="America/Argentina/Buenos_Aires">(GMT-03:00) Buenos Aires</option>
+<option value="America/Cayenne">(GMT-03:00) Cayenne</option>
+<option value="America/Godthab">(GMT-03:00) Greenland</option>
+<option value="America/Montevideo">(GMT-03:00) Montevideo</option>
+<option value="Atlantic/South_Georgia">(GMT-02:00) Mid-Atlantic</option>
+<option value="Atlantic/Azores">(GMT-01:00) Azores</option>
+<option value="Atlantic/Cape_Verde">(GMT-01:00) Cape Verde Is.</option>
+<option value="Africa/Casablanca">(GMT) Casablanca</option>
+<option value="GMT">(GMT) Coordinated Universal Time</option>
+<option value="Europe/London">(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+<option value="Atlantic/Reykjavik">(GMT) Monrovia, Reykjavik</option>
+<option value="Europe/Amsterdam">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+<option value="Europe/Belgrade">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+<option value="Europe/Brussels">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+<option value="Europe/Sarajevo">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+<option value="Africa/Tunis">(GMT+01:00) West Central Africa</option>
+<option value="Asia/Amman">(GMT+02:00) Amman</option>
+<option value="Europe/Athens">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+<option value="Asia/Beirut">(GMT+02:00) Beirut</option>
+<option value="Africa/Cairo">(GMT+02:00) Cairo</option>
+<option value="Africa/Harare">(GMT+02:00) Harare, Pretoria</option>
+<option value="Europe/Helsinki">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+<option value="Asia/Jerusalem">(GMT+02:00) Jerusalem</option>
+<option value="Europe/Minsk">(GMT+02:00) Minsk</option>
+<option value="Africa/Windhoek">(GMT+02:00) Windhoek</option>
+<option value="Asia/Baghdad">(GMT+03:00) Baghdad</option>
+<option value="Asia/Kuwait">(GMT+03:00) Kuwait, Riyadh</option>
+<option value="Europe/Moscow">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+<option value="Africa/Nairobi">(GMT+03:00) Nairobi</option>
+<option value="Asia/Tbilisi">(GMT+03:00) Tbilisi</option>
+<option value="Asia/Tehran">(GMT+03:30) Tehran</option>
+<option value="Asia/Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
+<option value="Asia/Baku">(GMT+04:00) Baku</option>
+<option value="Europe/Samara">(GMT+04:00) Caucasus Standard Time</option>
+<option value="Indian/Mauritius">(GMT+04:00) Port Louis</option>
+<option value="Asia/Yerevan">(GMT+04:00) Yerevan</option>
+<option value="Asia/Kabul">(GMT+04:30) Kabul</option>
+<option value="Asia/Yekaterinburg">(GMT+05:00) Ekaterinburg</option>
+<option value="Asia/Karachi">(GMT+05:00) Islamabad, Karachi</option>
+<option value="Asia/Tashkent">(GMT+05:00) Tashkent</option>
+<option value="+5:30">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+<option value="Asia/Colombo">(GMT+05:30) Sri Jayawardenepura</option>
+<option value="Asia/Katmandu">(GMT+05:45) Kathmandu</option>
+<option value="Asia/Almaty">(GMT+06:00) Almaty, Novosibirsk</option>
+<option value="Asia/Dhaka">(GMT+06:00) Astana, Dhaka</option>
+<option value="Asia/Rangoon">(GMT+06:30) Yangon (Rangoon)</option>
+<option value="Asia/Bangkok">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+<option value="Asia/Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+<option value="Asia/Hong_Kong">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+<option value="Asia/Irkutsk">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+<option value="Asia/Kuala_Lumpur">(GMT+08:00) Kuala Lumpur, Singapore</option>
+<option value="Australia/Perth">(GMT+08:00) Perth</option>
+<option value="Asia/Taipei">(GMT+08:00) Taipei</option>
+<option value="Asia/Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+<option value="Asia/Seoul">(GMT+09:00) Seoul</option>
+<option value="Asia/Yakutsk">(GMT+09:00) Yakutsk</option>
+<option value="Australia/Adelaide">(GMT+09:30) Adelaide</option>
+<option value="Australia/Darwin">(GMT+09:30) Darwin</option>
+<option value="Australia/Brisbane">(GMT+10:00) Brisbane</option>
+<option value="Australia/Melbourne">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+<option value="Pacific/Guam">(GMT+10:00) Guam, Port Moresby</option>
+<option value="Australia/Hobart">(GMT+10:00) Hobart</option>
+<option value="Asia/Vladivostok">(GMT+10:00) Vladivostok</option>
+<option value="Asia/Magadan">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+<option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
+<option value="Pacific/Fiji">(GMT+12:00) Fiji, Marshall Is.</option>
+<option value="Asia/Kamchatka">(GMT+12:00) Petropavlovsk-Kamchatsky</option>
+<option value="Pacific/Tongatapu">(GMT+13:00) Nuku'alofa</option>
+</select>
+        </span>
+    </div>
+
+
+	<div class="tms_profile_row" id="tms_profile_row_custom1">
+		<span class="tdcolor tms_profile_left"><label for="custom1">Contact Comment: <span id="custom1_label" class=""><br></span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="custom1" name="custom1" maxlength="255" size="35" alt="Contact Comment" type="text">
+			<br>Example: "Best time to call...." or "Contact only via email"
+			<br>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="tms_profile_row" id="tms_profile_row_correspondence_language">
+		<span class="tdcolor tms_profile_left"><label for="correspondence_language">Correspondence Language: <span class="required">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right">
+			
+			<select name="correspondence_language" id="correspondence_language">
+			<option value="de-DE">Deutsch (DE)</option>
+			
+<option value="en-US" selected="selected">English (US)</option>
+			
+<option value="es-ES">Español (ES)</option>
+			
+<option value="fr-CA">Français (CA)</option>
+			
+<option value="fr-FR">Français (FR)</option>
+			
+<option value="nl-NL">Nederlands (NL)</option>
+			
+<option value="zh-CN">简体中文 (CN)</option>
+			
+</select>
+			
+		</span>
+	</div>
+
+
+
+</div>
+<!-- END contact_block --></div>
+
+<br>
+		
+
+<span class="tableheader tableline">Employment Information</span>
+
+<div id="employment_block"><!-- START employment_block -->
+<div class="tms_profile_table">
+
+
+	<div class="tms_profile_row" id="tms_profile_row_category">
+		<span class="tdcolor tms_profile_left">
+			<label for="category">What are your areas of expertise? <span id="category_label" class="required">*</span>
+			<br><i><font size="1">(Select all that apply)</font></i> <br>
+            <small>
+            <b>Multiple Selection Tips:</b>
+            <b>A:</b>
+            To select multiple preferences using a PC, hold down the 
+'Control' key while clicking the option with the mouse. To select a 
+range, hold the shift key and click on the first and last options. <b>B:</b> Use the 'Command' key if you are using a Macintosh.
+            </small></label>
+		</span>
+		<span class="tdcolor2 tms_profile_right">
+            <select name="category" id="category" size="6" multiple="multiple">
+            
+<option value="1" title="Accounting">Accounting</option>
+<option value="2" title="Administrative &amp; Clerical">Administrative &amp; Clerical</option>
+<option value="11456" title="Architecture">Architecture</option>
+<option value="3561" title="Engineering &amp; Development">Engineering &amp; Development</option>
+<option value="11457" title="Buying &amp; Merchandising">Buying &amp; Merchandising</option>
+<option value="544" title="Construction &amp; Facilities">Construction &amp; Facilities</option>
+<option value="11458" title="Finance">Finance</option>
+<option value="11454" title="Design - Technical &amp; Graphic Design">Design - Technical &amp; Graphic Design</option>
+<option value="5625" title="Distribution Centers (Logistics)">Distribution Centers (Logistics)</option>
+<option value="545" title="Customer Service (Call Centers)">Customer Service (Call Centers)</option>
+<option value="11460" title="E-Commerce - Merchandising &amp; Marketing">E-Commerce - Merchandising &amp; Marketing</option>
+<option value="11459" title="E-Commerce - Technology (IT)">E-Commerce - Technology (IT)</option>
+<option value="4" title="Interior Design">Interior Design</option>
+<option value="13" title="Human Resources, Recruiting, Training &amp; HRIS">Human Resources, Recruiting, Training &amp; HRIS</option>
+<option value="11461" title="Food Services &amp; Cafe 21">Food Services &amp; Cafe 21</option>
+<option value="5" title="Purchasing &amp; Sourcing">Purchasing &amp; Sourcing</option>
+<option value="660" title="Information Technology (IT)">Information Technology (IT)</option>
+<option value="11462" title="International Buying &amp; Merchandising">International Buying &amp; Merchandising</option>
+<option value="11463" title="International Operations">International Operations</option>
+<option value="11464" title="Loss Prevention">Loss Prevention</option>
+<option value="7" title="Visual Merchandising &amp; Visual Operations">Visual Merchandising &amp; Visual Operations</option>
+<option value="11465" title="Maintenance &amp; Supply">Maintenance &amp; Supply</option>
+<option value="11466" title="Marketing, PR &amp; Social Media">Marketing, PR &amp; Social Media</option>
+<option value="9007" title="Merchandise Planning &amp; Allocations">Merchandise Planning &amp; Allocations</option>
+<option value="11467" title="Payroll">Payroll</option>
+<option value="47" title="Production">Production</option>
+<option value="11468" title="Project Management">Project Management</option>
+<option value="11475" title="Real Estate">Real Estate</option>
+<option value="11476" title="Legal &amp; Risk Management">Legal &amp; Risk Management</option>
+<option value="9008" title="Retail - Field Operations">Retail - Field Operations</option>
+<option value="11469" title="Saftey &amp; Security">Saftey &amp; Security</option>
+<option value="558" title="Strategy">Strategy</option>
+<option value="11474" title="Sales &amp; Business Development">Sales &amp; Business Development</option>
+<option value="11473" title="Quality Assurance">Quality Assurance</option>
+            </select>
+		</span>
+	</div>
+
+
+
+	<div class="tms_profile_row" id="tms_profile_row_joblevel">
+		<span class="tdcolor tms_profile_left"><label for="joblevel">Career Level: <span id="joblevel_label" class="required">*</span><br></label></span>
+		<span class="tdcolor2 tms_profile_right">
+            <select name="joblevel" id="joblevel">
+                <option selected="selected" value="">--</option>
+                
+<option value="10" title="Student (Undergraduate/Graduate)">Student (Undergraduate/Graduate)</option>
+<option value="11" title="Entry Level">Entry Level</option>
+<option value="16" title="Student (High School)">Student (High School)</option>
+<option value="12" title="Experienced (Non-Manager)">Experienced (Non-Manager)</option>
+<option value="13" title="Manager (Manager/Supervisor of Staff)">Manager (Manager/Supervisor of Staff)</option>
+<option value="14" title="Executive (SVP, VP, Department Head, etc)">Executive (SVP, VP, Department Head, etc)</option>
+<option value="15" title="Senior Executive (President, CFO, etc)">Senior Executive (President, CFO, etc)</option>[45]
+            </select>
+		</span>
+	</div>
+
+
+
+	<div class="tms_profile_row" id="tms_profile_row_jobtype">
+		<span class="tdcolor tms_profile_left"><label for="jobtype_1">What kind of job are you looking for? <span id="jobtype_label" class="required">*</span><br><font size="1"><i>(Select all that apply)</i></font> </label></span>
+		<span class="tdcolor2 tms_profile_right">
+			
+			<input id="jobtype_1" name="jobtype" value="1" alt="Full Time" type="checkbox"> <label for="jobtype_1">Full Time</label><br>
+<input id="jobtype_2" name="jobtype" value="2" alt="Part Time" type="checkbox"> <label for="jobtype_2">Part Time</label><br>
+<input id="jobtype_6" name="jobtype" value="6" alt="Temporary &amp; Temp Project" type="checkbox"> <label for="jobtype_6">Temporary &amp; Temp Project</label><br>
+<input id="jobtype_7" name="jobtype" value="7" alt="Seasonal" type="checkbox"> <label for="jobtype_7">Seasonal</label><br>
+<input id="jobtype_5" name="jobtype" value="5" alt="Internship" type="checkbox"> <label for="jobtype_5">Internship</label><br>
+<input id="jobtype_4" name="jobtype" value="4" alt="Contract" type="checkbox"> <label for="jobtype_4">Contract</label><br>
+
+		</span>
+	</div>
+
+
+ <!-- START salary_block -->
+		          <div class="tms_profile_row" id="tms_profile_row_compensation">
+		            <span class="tdcolor tms_profile_left"><label for="compensation">Desired Compensation:<span id="compensation_label" class=""></span></label></span>
+		            <span class="tdcolor2 tms_profile_right">
+		            <input id="compensation" name="compensation" size="12" alt="Desired Compensation" type="text">
+                    <select name="currencyid">
+                        <option selected="selected" value="">--</option>
+                        
+<option value="1" title="USD">USD</option>
+<option value="7" title="CAD">CAD</option>
+<option value="2" title="EUR">EUR</option>
+<option value="15" title="GBP">GBP</option>
+<option value="16" title="GRD">GRD</option>
+<option value="14" title="FRF">FRF</option>
+<option value="12" title="ESP">ESP</option>
+<option value="31" title="RUB">RUB</option>
+<option value="26" title="MXN">MXN</option>
+<option value="9" title="CNY">CNY</option>
+                    </select>
+
+                    <select name="salarytypeid">
+                    <option selected="selected" value="">--</option>
+                    
+<option value="1" title="Per Year">Per Year</option>
+<option value="2" title="Per Hour">Per Hour</option>
+<option value="5" title="Bi-Weekly">Bi-Weekly</option>
+<option value="6" title="Per Day">Per Day</option>
+<option value="3" title="Per Week">Per Week</option>
+<option value="4" title="Per Month">Per Month</option>
+                    </select>
+		<br>
+		(numeric characters only) 
+		            </span>
+		          </div><!-- END salary_block -->
+
+
+ <!-- START travel_block -->
+        <div class="tms_profile_row" id="tms_profile_row_travel">
+          <span class="tdcolor tms_profile_left"><label for="travel">% of Travel: <span id="travel_label" class="required">*</span></label></span>
+          <span class="tdcolor2 tms_profile_right">
+          <select name="travel" id="travel"><option selected="selected" value="">--</option>
+<option value="0" title="None">None</option>
+<option value="1" title="0-10%">0-10%</option>
+<option value="2" title="10-20%">10-20%</option>
+<option value="3" title="20-30%">20-30%</option>
+<option value="4" title="30-40%">30-40%</option>
+<option value="5" title="40-50%">40-50%</option>
+<option value="6" title="50-60%">50-60%</option>
+<option value="7" title="60-70%">60-70%</option>
+<option value="8" title="70-80%">70-80%</option>
+<option value="9" title="80-90%">80-90%</option>
+<option value="10" title="90-100%">90-100%</option>
+<option value="11" title="100%">100%</option></select>
+          </span>
+        </div><!-- END travel_block -->
+
+
+ <!-- START relocation_block -->
+        <div class="tms_profile_row" id="tms_profile_row_relocate">
+            <span class="tdcolor tms_profile_left">
+                <label for="relocate_1">Are you willing to relocate?:
+                <span id="relocate_label" class=""></span></label>
+            </span>
+            <span class="tdcolor2 tms_profile_right">
+                <input id="relocate_1" name="relocate" value="1" alt="Yes" type="radio"> <label for="relocate_1">Yes</label>
+                <input id="norelocate" name="relocate" value="2" alt="No" type="radio"> <label for="norelocate">No</label>
+                <input id="relocate_3" name="relocate" value="3" alt="Maybe" type="radio"> <label for="relocate_3">Maybe</label>
+                
+            </span>
+        </div>
+        <div class="tms_profile_row" id="tms_profile_row_relocatecomments">
+            <span class="tdcolor tms_profile_left"><label for="relocatecomments">Possible relocation options: † <br><i><small>(Select all that apply)</small></i><br><br>† Required if "Yes" or "Maybe" is selected</label></span>
+            <span class="tdcolor2 tms_profile_right">
+                <select name="relocatecomments" id="relocatecomments" size="6" multiple="multiple">
+<option value="AL" title="Alabama">Alabama</option>
+<option value="AK" title="Alaska">Alaska</option>
+<option value="ANY" title="Anywhere">Anywhere</option>
+<option value="AZ" title="Arizona">Arizona</option>
+<option value="AR" title="Arkansas">Arkansas</option>
+<option value="Australia" title="Australia">Australia</option>
+<option value="Austria" title="Austria">Austria</option>
+<option value="Belgium" title="Belgium">Belgium</option>
+<option value="Brazil" title="Brazil">Brazil</option>
+<option value="CA" title="California">California</option>
+<option value="Canada" title="Canada">Canada</option>
+<option value="China" title="China">China</option>
+<option value="CO" title="Colorado">Colorado</option>
+<option value="CT" title="Connecticut">Connecticut</option>
+<option value="DC" title="DC (Washington)">DC (Washington)</option>
+<option value="DE" title="Delaware">Delaware</option>
+<option value="Denmark" title="Denmark">Denmark</option>
+<option value="Dominican Republic" title="Dominican Republic">Dominican Republic</option>
+<option value="FL" title="Florida">Florida</option>
+<option value="France" title="France">France</option>
+<option value="GA" title="Georgia">Georgia</option>
+<option value="Germany" title="Germany">Germany</option>
+<option value="HI" title="Hawaii">Hawaii</option>
+<option value="Hong Kong" title="Hong Kong">Hong Kong</option>
+<option value="ID" title="Idaho">Idaho</option>
+<option value="IL" title="Illinois">Illinois</option>
+<option value="India" title="India">India</option>
+<option value="IN" title="Indiana">Indiana</option>
+<option value="IA" title="Iowa">Iowa</option>
+<option value="Ireland" title="Ireland">Ireland</option>
+<option value="Israel" title="Israel">Israel</option>
+<option value="Italy" title="Italy">Italy</option>
+<option value="Japan" title="Japan">Japan</option>
+<option value="KS" title="Kansas">Kansas</option>
+<option value="KY" title="Kentucky">Kentucky</option>
+<option value="LA" title="Louisiana">Louisiana</option>
+<option value="Macau" title="Macau">Macau</option>
+<option value="ME" title="Maine">Maine</option>
+<option value="MD" title="Maryland">Maryland</option>
+<option value="MA" title="Massachusetts">Massachusetts</option>
+<option value="Mexico" title="Mexico">Mexico</option>
+<option value="MI" title="Michigan">Michigan</option>
+<option value="MN" title="Minnesota">Minnesota</option>
+<option value="MS" title="Mississippi">Mississippi</option>
+<option value="MO" title="Missouri">Missouri</option>
+<option value="MT" title="Montana">Montana</option>
+<option value="NE" title="Nebraska">Nebraska</option>
+<option value="Netherlands" title="Netherlands">Netherlands</option>
+<option value="NV" title="Nevada">Nevada</option>
+<option value="NH" title="New Hampshire">New Hampshire</option>
+<option value="NJ" title="New Jersey">New Jersey</option>
+<option value="NM" title="New Mexico">New Mexico</option>
+<option value="NY" title="New York">New York</option>
+<option value="NC" title="North Carolina">North Carolina</option>
+<option value="ND" title="North Dakota">North Dakota</option>
+<option value="OH" title="Ohio">Ohio</option>
+<option value="OK" title="Oklahoma">Oklahoma</option>
+<option value="OR" title="Oregon">Oregon</option>
+<option value="PA" title="Pennsylvania">Pennsylvania</option>
+<option value="PR" title="Puerto Rico">Puerto Rico</option>
+<option value="RI" title="Rhode Island">Rhode Island</option>
+<option value="Russia" title="Russia">Russia</option>
+<option value="SCT" title="Scotland">Scotland</option>
+<option value="Singapore" title="Singapore">Singapore</option>
+<option value="South Africa" title="South Africa">South Africa</option>
+<option value="SC" title="South Carolina">South Carolina</option>
+<option value="SD" title="South Dakota">South Dakota</option>
+<option value="South Korea" title="South Korea">South Korea</option>
+<option value="Spain" title="Spain">Spain</option>
+<option value="Sweden" title="Sweden">Sweden</option>
+<option value="Taiwan" title="Taiwan">Taiwan</option>
+<option value="TN" title="Tennessee">Tennessee</option>
+<option value="TX" title="Texas">Texas</option>
+<option value="Thailand" title="Thailand">Thailand</option>
+<option value="United Kingdom" title="United Kingdom">United Kingdom</option>
+<option value="UT" title="Utah">Utah</option>
+<option value="VT" title="Vermont">Vermont</option>
+<option value="VA" title="Virginia">Virginia</option>
+<option value="WA" title="Washington">Washington</option>
+<option value="WV" title="West Virginia">West Virginia</option>
+<option value="WI" title="Wisconsin">Wisconsin</option>
+<option value="WY" title="Wyoming">Wyoming</option></select>
+            </span>
+        </div>
+        <div class="tms_profile_row" id="tms_profile_row_relocatecomments2">
+            <span class="tdcolor tms_profile_left"><label for="relocatecomments2">Additional relocation comments:
+                <span id="relocatecomments2_label" class=""></span></label>
+            </span>
+            <span class="tdcolor2 tms_profile_right">
+                <input id="relocatecomments2" name="relocatecomments2" maxlength="250" size="35" alt="Additional relocation comments" type="text">
+            </span>
+        </div>
+    <!-- END relocation_block -->
+
+
+
+        <div class="tms_profile_row" id="tms_profile_row_availabilitycomments">
+            <span class="tdcolor tms_profile_left">
+                <label for="availabilitycomments">When would you be available to start?
+                <span id="availabilitycomments_label" class=""></span></label>
+            </span>
+            <span class="tdcolor2 tms_profile_right">
+                <input id="availabilitycomments" name="availabilitycomments" maxlength="250" size="35" alt="When would you be available to start?" type="text">
+                
+            </span>
+        </div>
+
+
+
+        <div class="tms_profile_row" id="tms_profile_row_age">
+            <span class="tdcolor tms_profile_left">
+               <label for="age"> If you are under 18, please state your age, 
+                <span class=""></span></label>
+            </span>
+            <span class="tdcolor2 tms_profile_right">
+                <input size="2" maxlength="2" id="age" name="age" alt="If you are under 18, please state your age, " type="text">
+                
+            </span>
+        </div>
+
+
+
+        <div class="tms_profile_row" id="tms_profile_row_work_auth">
+            <span class="tdcolor tms_profile_left">
+              <label for="work_auth_countries">  Work Authorization:</label>
+                <span class="required">*</span><br>
+            </span>
+            <span class="tdcolor2 tms_profile_right">
+               <label for="work_auth_countries"> I am authorized to work in these countries for any employer:<br></label>
+                <select id="work_auth_countries" name="work_auth_countries" multiple="multiple" size="4">
+                    
+<option value="AU" title="Australia">Australia</option>
+<option value="AT" title="Austria">Austria</option>
+<option value="BD" title="Bangladesh">Bangladesh</option>
+<option value="BE" title="Belgium">Belgium</option>
+<option value="CA" title="Canada">Canada</option>
+<option value="CN" title="China">China</option>
+<option value="CO" title="Colombia">Colombia</option>
+<option value="DO" title="Dominican Republic">Dominican Republic</option>
+<option value="FR" title="France">France</option>
+<option value="DE" title="Germany">Germany</option>
+<option value="HK" title="Hong Kong">Hong Kong</option>
+<option value="IN" title="India">India</option>
+<option value="IE" title="Ireland">Ireland</option>
+<option value="IL" title="Israel">Israel</option>
+<option value="IT" title="Italy">Italy</option>
+<option value="JP" title="Japan">Japan</option>
+<option value="KR" title="Korea, Republic Of">Korea, Republic Of</option>
+<option value="MX" title="Mexico">Mexico</option>
+<option value="NL" title="Netherlands">Netherlands</option>
+<option value="PH" title="Philippines">Philippines</option>
+<option value="PR" title="Puerto Rico">Puerto Rico</option>
+<option value="ES" title="Spain">Spain</option>
+<option value="UK" title="United Kingdom">United Kingdom</option>
+<option value="US" title="United States">United States</option>
+<option value="VN" title="Viet Nam">Viet Nam</option>
+                </select><br>
+                <label for="work_auth_countries_restricted">I am authorized to work in these countries for my present employer only:<br></label>
+                <select id="work_auth_countries_restricted" name="work_auth_countries_restricted" multiple="multiple" size="4">
+                    
+<option value="AU" title="Australia">Australia</option>
+<option value="AT" title="Austria">Austria</option>
+<option value="BD" title="Bangladesh">Bangladesh</option>
+<option value="BE" title="Belgium">Belgium</option>
+<option value="CA" title="Canada">Canada</option>
+<option value="CN" title="China">China</option>
+<option value="CO" title="Colombia">Colombia</option>
+<option value="DO" title="Dominican Republic">Dominican Republic</option>
+<option value="FR" title="France">France</option>
+<option value="DE" title="Germany">Germany</option>
+<option value="HK" title="Hong Kong">Hong Kong</option>
+<option value="IN" title="India">India</option>
+<option value="IE" title="Ireland">Ireland</option>
+<option value="IL" title="Israel">Israel</option>
+<option value="IT" title="Italy">Italy</option>
+<option value="JP" title="Japan">Japan</option>
+<option value="KR" title="Korea, Republic Of">Korea, Republic Of</option>
+<option value="MX" title="Mexico">Mexico</option>
+<option value="NL" title="Netherlands">Netherlands</option>
+<option value="PH" title="Philippines">Philippines</option>
+<option value="PR" title="Puerto Rico">Puerto Rico</option>
+<option value="ES" title="Spain">Spain</option>
+<option value="UK" title="United Kingdom">United Kingdom</option>
+<option value="US" title="United States">United States</option>
+<option value="VN" title="Viet Nam">Viet Nam</option>
+                </select>
+            </span>
+        </div>
+
+
+        </div>
+<!-- END employment_block --></div>
+
+
+<!-- ############################################################# -->
+<script language="JavaScript" src="/cgi-bin/js_helper.cgi"></script>
+
+
+<script language="JavaScript">
+/** workhistory_form2html()
+ This function takes the forms values out of the workhistory
+ user input fields and generates an HTML string
+ that will be used to represent/display it in the summary list.
+ The html string includes links to edit/delete this entry (and pass an
+  unSaved=true paramter to the normal functions so they know its an edit of
+  an entry that has not yet been saved to the db)
+*/
+function workhistory_form2html( entryId, createOldEntry )
+{
+	var cur_industry = $('workhistory_company_industry');
+	var myIndustry   = cur_industry.options[cur_industry.selectedIndex].value;
+	var IndustryName   = cur_industry.options[cur_industry.selectedIndex].text;
+
+    var newString = createOldEntry ? '' : 'new_'; //Mantis 0114053
+    var editingNewEntry = createOldEntry ? 'false' : 'true';
+
+    var newBlockContents = "<div class='tms_33_left'>";
+  	newBlockContents += "<span id='" + newString + "workhistory_company_name_" + entryId +"'>";
+    newBlockContents += $F('workhistory_company_name') + "<\/span>(";
+  	newBlockContents += "<span id='" + newString + "workhistory_company_industry_" + entryId +"'>";
+    newBlockContents += IndustryName + "<\/span>)<br \/>";
+  	newBlockContents += "<span id='" + newString + "workhistory_company_location_" + entryId +"'>";
+    newBlockContents += $F('workhistory_company_location') + "<\/span><\/div>";
+
+    newBlockContents += "<div class='tms_33_left' id='" + newString + "workhistory_job_title_" + entryId +"'>";
+  	newBlockContents += $F('workhistory_job_title');
+    newBlockContents += "<\/div><div class='tms_33_left'>";
+
+	var sDate = $F('workhistory_start_date');
+	var sDash  = '-';
+
+	newBlockContents += "<s"+"pan id='" + newString + "workhistory_start_date_" + entryId +"' >" + sDate + "<\/s"+"pan>&nbsp;"+sDash+"&nbsp;";
+
+	var eDate = $F('workhistory_end_date');
+
+    if ($F('workhistory_end_present')) {
+        Form.Element.setValue( $('workhistory_end_date'), '');
+        eDate = "Present";
+        newBlockContents += "<s"+"pan id='" + newString + "workhistory_end_present_" + entryId +"' >" + eDate + "<\/s"+"pan><\/div><br \/>";
+    } else {
+        newBlockContents += "<s"+"pan id='" + newString + "workhistory_end_date_" + entryId +"' >" + eDate + "<\/s"+"pan><\/div><br \/>";
+    }
+// 	newBlockContents += "<span id='workhistory_end_year_" + entryId +"'>" + $F('workhistory_end_year') + "<\/span><br \/>";
+// 	newBlockContents += "<span id='workhistory_end_present_" + entryId +"'>" + eMonth + "<\/span><\/div><br \/>";
+	newBlockContents += "<d"+"iv class='tms_100_left whitespace' class='whitespace' id='" + newString + "workhistory_job_description_" + entryId +"'>" + $F('workhistory_job_description') + "<\/d"+"iv><br \/>";
+
+  newBlock = '';
+
+  if (!createOldEntry) {
+    newBlock += "<di"+"v class='tms_history_item' id='" + newString + "workhistory" + entryId +"'>";
+  }
+  newBlock += newBlockContents+"<di"+"v class='tms_100_right'>";
+  if (createOldEntry) {
+    newBlock += "<s"+"pan id='editing_workhistory" + entryId +"' >" + "<\/s"+"pan>";
+  }
+  newBlock += "<"+"a href='#workhistory' onClick='edit_mList_entry( workhistoryType, " + entryId +", " + editingNewEntry + " );' class='reg'>Edit<\/"+"a> :: <"+"a href='#' onclick='if(confirm(\"Are you sure you want to delete this entry for "+ $F('workhistory_company_name') +"?\")){delete_mList_entry(workhistoryType, " + entryId +", " + editingNewEntry + ");} return false;' class='reg'>Delete<\/"+"a><\/d"+"iv><d"+"iv class='tms_clear_both'></d"+"iv>";
+  if (!createOldEntry) {
+    newBlock += "<\/d"+"iv>";
+  }
+
+  return newBlock;
+}
+
+function workhistory_validate()
+{
+	var eduValidated;
+
+	var company_name = $('workhistory_company_name').value;
+
+	var company_location = $('workhistory_company_location').value;
+
+	var job_title = $('workhistory_job_title').value;
+
+	var start_date = $('workhistory_start_date').value;
+
+	var end_date = $('workhistory_end_date').value;
+
+	var end_present = $('workhistory_end_present').checked;
+
+	var job_description = $('workhistory_job_description').value;
+
+	if(company_name == "" || company_location == "" || start_date == "" ||
+		(end_date=="" && (end_present==0) ) || job_description =="" || job_title ==""){
+		alert("Please enter the required fields." );
+		return false;
+	}
+
+    if ( !valid_date( start_date ) ||  ( end_date != '' && !valid_date( end_date ) ) )
+    {
+        alert( "ERROR: Invalid Date Specified.\n" );
+		return false;
+    }
+
+	// Start Date must not be later than End Date
+	if (  end_date != '' && start_date > end_date )
+	{
+		alert( "Start Date must not be later than End Date" );
+		return false;
+	}
+
+	return true;
+}
+ workhistoryType = { baseName: 'workhistory',
+                      counterInt: 0,
+                      textFields : ['workhistory_id','workhistory_company_name','workhistory_company_location',
+                                    'workhistory_job_title','workhistory_job_description','workhistory_start_date','workhistory_end_date'],
+                      selectFields : ['workhistory_company_industry'],
+                      checkBoxes : ['workhistory_end_present'],
+                      editMarkersDestination:'editing_workhistory',
+                      entryList: 'workhistory_list',
+                      entryListContainer: 'workhistory_summary',
+                      entryStyles : {new_unsaved:'background-color:#FFFFCC', existing_deleted:'background-color:grey', existing_edited:'background-color:#FFCC66' },
+                      form2HtmlFunction : workhistory_form2html,
+                      validateFunction : workhistory_validate
+                    };
+</script>
+	<br><a name="workhistory"></a>
+
+<span class="tableheader tableline">Work History</span>
+	<div id="workhistory_block" style="display: inline;">
+	<!-- START workhistory_block -->
+	<div class="tms_profile_table">
+      <div class="tdcolor tms_profile_row" id="tms_profile_row_workhsitory_block_min_entries">
+
+For each entry you complete in this section, the fields marked with an asterisk (*) are required.
+
+
+      </div>
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_workhistory_block_step_text"></div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_company_name">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_company_name">Company Name: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input name="workhistory_company_name" id="workhistory_company_name" size="35" alt="Company Name:" type="text"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_company_industry">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_company_industry">Industry: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><select name="workhistory_company_industry" id="workhistory_company_industry">
+<option selected="selected" value="1000" title="Accounting">Accounting</option>
+<option value="1001" title="Aerospace/Avionics">Aerospace/Avionics</option>
+<option value="1002" title="Arts/Entertainment">Arts/Entertainment</option>
+<option value="1003" title="Automotive">Automotive</option>
+<option value="1004" title="Chemicals">Chemicals</option>
+<option value="1005" title="Communications">Communications</option>
+<option value="1007" title="Computer - Hardware">Computer - Hardware</option>
+<option value="1006" title="Computer - Software">Computer - Software</option>
+<option value="1008" title="Construction">Construction</option>
+<option value="1009" title="Distribution">Distribution</option>
+<option value="1010" title="E-commerce">E-commerce</option>
+<option value="1011" title="Education">Education</option>
+<option value="1012" title="Electronics">Electronics</option>
+<option value="1013" title="Employment/Staffing">Employment/Staffing</option>
+<option value="1014" title="Engineering">Engineering</option>
+<option value="1015" title="Environmental">Environmental</option>
+<option value="1016" title="Fashion">Fashion</option>
+<option value="1017" title="Financial Services &amp; Insurance">Financial Services &amp; Insurance</option>
+<option value="1018" title="Food Agriculture &amp; Service">Food Agriculture &amp; Service</option>
+<option value="1019" title="Government/Politics">Government/Politics</option>
+<option value="1020" title="Graphic Design">Graphic Design</option>
+<option value="1021" title="Hospitality">Hospitality</option>
+<option value="1022" title="Industrial">Industrial</option>
+<option value="1023" title="Landscape/Horticulture">Landscape/Horticulture</option>
+<option value="1024" title="Legal">Legal</option>
+<option value="1025" title="Management Consulting">Management Consulting</option>
+<option value="1026" title="Manufacturing">Manufacturing</option>
+<option value="1027" title="Marketing Communications">Marketing Communications</option>
+<option value="1028" title="Medical/Health Services">Medical/Health Services</option>
+<option value="1029" title="Not-for-Profit">Not-for-Profit</option>
+<option value="1031" title="Pharmaceutical">Pharmaceutical</option>
+<option value="1032" title="Printing">Printing</option>
+<option value="1033" title="Product Design">Product Design</option>
+<option value="1034" title="Publishing, Media and Advertising">Publishing, Media and Advertising</option>
+<option value="1035" title="Real Estate">Real Estate</option>
+<option value="1036" title="Restaurant/Bakery">Restaurant/Bakery</option>
+<option value="1037" title="Retail">Retail</option>
+<option value="1038" title="Science">Science</option>
+<option value="1039" title="Service">Service</option>
+<option value="1030" title="Social Services">Social Services</option>
+<option value="1040" title="Software Publishing">Software Publishing</option>
+<option value="1041" title="Sports">Sports</option>
+<option value="1042" title="Technology/Computers">Technology/Computers</option>
+<option value="1043" title="Textiles">Textiles</option>
+<option value="1044" title="Transportation">Transportation</option>
+<option value="1045" title="Travel">Travel</option>
+<option value="1046" title="Utilities/Energy">Utilities/Energy</option>
+<option value="1047" title="Wholesale/Distribution">Wholesale/Distribution</option>[45]</select></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_job_title">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_job_title">Job Title: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input id="workhistory_job_title" name="workhistory_job_title" size="35" alt="Job Title:" type="text"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_company_location">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_company_location">City/State: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right"><input name="workhistory_company_location" id="workhistory_company_location" size="20" alt="City/State:" type="text"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_start_date">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_start_date">Start Date: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right">
+			<input id="workhistory_start_date" name="workhistory_start_date" size="10" type="text">
+			<img style="cursor: pointer;" src="assets_files/calendar_small.gif" title="Select a Date from the Calendar" alt="Select a Date from the Calendar" border="0">
+			(yyyy-mm-dd)
+	    </span>
+       </div>
+      <div class="tms_profile_row" id="tms_profile_row_workhistory_end_date">
+		<span class="tdcolor tms_profile_left"><label for="workhistory_end_date">End Date: <span class="workhistory_star ">*</span></label></span>
+		<span class="tdcolor2 tms_profile_right">
+			<input id="workhistory_end_date" name="workhistory_end_date" size="10" type="text">
+			<img style="cursor: pointer;" src="assets_files/calendar_small.gif" title="Select a Date from the Calendar" alt="Select a Date from the Calendar" border="0">
+			(yyyy-mm-dd)
+			&nbsp; &nbsp; or &nbsp; &nbsp; <input id="workhistory_end_present" name="workhistory_end_present" value="1" alt="present" type="checkbox"><label for="workhistory_end_present">present</label>
+		</span>
+       </div>
+       <div class="tms_profile_row" id="tms_profile_row_workhistory_job_description">
+			<span class="tdcolor tms_profile_left"><label for="workhistory_job_description">Duties <span class="workhistory_star ">*</span></label></span>
+			<span class="tdcolor2 tms_profile_right">
+				<textarea rows="5" name="workhistory_job_description" id="workhistory_job_description" cols="35"></textarea>
+			</span>
+	   </div>
+       <div class="tms_profile_row">
+ <p>
+ Please make sure to click the "Add Work History" button below to record the entry.
+ </p>
+ <p>
+ <input id="workhistory_id" name="AWP" value="0" type="hidden">
+ <input onclick="alert( 'You must agree to the Terms of Service.' ); save_mList_entry( workhistoryType );" value="Add Work History" alt="Add Work History" name="workhistory_save" id="workhistory_save" class="button_js" type="button">
+ <input value="Cancel" alt="Cancel" onclick="reset_mList_fields(workhistoryType );" class="button_js_2" id="cancel_button_workhistory" type="button">
+ </p>
+	   </div>
+ </div>
+<!--<p><b class="">Work History Summary </b></p>-->
+<script language="JavaScript">
+	function myWorkHistory(myid,mycomId){
+		var myVar = "workhistory_company_name_"+myid;
+		var myMSG = "Are you sure you want to delete this entry for "+ $(myVar).innerHTML+"?\n(Note: you must click the Submit button to have this item permanently removed.)";
+		if(confirm(myMSG)){
+			delete_mList_entry(workhistoryType, mycomId );
+		}
+		return false;
+	}
+</script>
+<div class="tms_profile_table tableline" id="tms_profile_workhistory_summary">
+	<div class="tms_profile_row trcolor" id="tms_profile_row_workhistory_summary_header1">
+		Work History Summary
+	</div>
+	<div class="tms_profile_row" id="tms_profile_row_workhistory_summary_header2">
+		<div class="tdcolor tms_33_left"><b>Company</b></div>
+		<div class="tdcolor tms_33_left"><b>Job Title</b></div>
+		<div class="tdcolor tms_33_left"><b>Date</b></div>
+	</div>
+	<div class="tms_profile_row" id="workhistory_list">
+	
+	
+	
+	<div style="background-color: rgb(255, 255, 204);" class="tms_history_item" id="new_workhistory1"><div class="tms_33_left"><span id="new_workhistory_company_name_1">xcvx</span>(<span id="new_workhistory_company_industry_1">Accounting</span>)<br><span id="new_workhistory_company_location_1">cvx</span></div><div class="tms_33_left" id="new_workhistory_job_title_1">xcvx</div><div class="tms_33_left"><span id="new_workhistory_start_date_1">2014-10-01</span>&nbsp;-&nbsp;<span id="new_workhistory_end_present_1">Present</span></div><br><div class="tms_100_left whitespace" id="new_workhistory_job_description_1">cvxvxv</div><br><div class="tms_100_right"><a href="#workhistory" onclick="edit_mList_entry( workhistoryType, 1, true );" class="reg">Edit</a> :: <a href="#" onclick='if(confirm("Are you sure you want to delete this entry for xcvx?")){delete_mList_entry(workhistoryType, 1, true);} return false;' class="reg">Delete</a></div><div class="tms_clear_both"></div><input id="Fnew_workhistory_ids_1" name="new_workhistory_ids" value="-1" type="hidden"><input id="Fnew_workhistory_company_names_1" name="new_workhistory_company_names" value="xcvx" type="hidden"><input id="Fnew_workhistory_company_locations_1" name="new_workhistory_company_locations" value="cvx" type="hidden"><input id="Fnew_workhistory_job_titles_1" name="new_workhistory_job_titles" value="xcvx" type="hidden"><input id="Fnew_workhistory_job_descriptions_1" name="new_workhistory_job_descriptions" value="cvxvxv" type="hidden"><input id="Fnew_workhistory_start_dates_1" name="new_workhistory_start_dates" value="2014-10-01" type="hidden"><input id="Fnew_workhistory_end_dates_1" name="new_workhistory_end_dates" value="" type="hidden"><input id="Fnew_workhistory_company_industrys_1" name="new_workhistory_company_industrys" value="1000" type="hidden"><input id="Fnew_workhistory_end_presents_1" name="new_workhistory_end_presents" value="1" type="hidden"></div></div>
+</div>
+<!-- END workhistory_block -->
+</div>
+<script language="JavaScript">
+	$('workhistory_block').style.display='inline';
+</script>
+
+
+	
+<noscript>
+<input type="hidden" value="1" name="no_script">
+<input type="hidden" name="new_workhistory_ids" value="-1">
+<div class="tms_profile_table tableline">
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_workhistory_block_step_text_noscript"></div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_company_names">
+		<span class="tdcolor tms_profile_left">Company Name: <span class='workhistory_star '>*</span></span>
+		<span class="tdcolor2 tms_profile_right"><input type="text" name="new_workhistory_company_names" size="35" alt="Company Name:"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_company_industrys">
+		<span class="tdcolor tms_profile_left">Industry: <span class='workhistory_star '>*</span></span>
+		<span class="tdcolor2 tms_profile_right"><select name="new_workhistory_company_industrys">
+<option value="1000" title="Accounting"  >Accounting</option>
+<option value="1001" title="Aerospace/Avionics"  >Aerospace/Avionics</option>
+<option value="1002" title="Arts/Entertainment"  >Arts/Entertainment</option>
+<option value="1003" title="Automotive"  >Automotive</option>
+<option value="1004" title="Chemicals"  >Chemicals</option>
+<option value="1005" title="Communications"  >Communications</option>
+<option value="1007" title="Computer - Hardware"  >Computer - Hardware</option>
+<option value="1006" title="Computer - Software"  >Computer - Software</option>
+<option value="1008" title="Construction"  >Construction</option>
+<option value="1009" title="Distribution"  >Distribution</option>
+<option value="1010" title="E-commerce"  >E-commerce</option>
+<option value="1011" title="Education"  >Education</option>
+<option value="1012" title="Electronics"  >Electronics</option>
+<option value="1013" title="Employment/Staffing"  >Employment/Staffing</option>
+<option value="1014" title="Engineering"  >Engineering</option>
+<option value="1015" title="Environmental"  >Environmental</option>
+<option value="1016" title="Fashion"  >Fashion</option>
+<option value="1017" title="Financial Services &amp; Insurance"  >Financial Services &amp; Insurance</option>
+<option value="1018" title="Food Agriculture &amp; Service"  >Food Agriculture &amp; Service</option>
+<option value="1019" title="Government/Politics"  >Government/Politics</option>
+<option value="1020" title="Graphic Design"  >Graphic Design</option>
+<option value="1021" title="Hospitality"  >Hospitality</option>
+<option value="1022" title="Industrial"  >Industrial</option>
+<option value="1023" title="Landscape/Horticulture"  >Landscape/Horticulture</option>
+<option value="1024" title="Legal"  >Legal</option>
+<option value="1025" title="Management Consulting"  >Management Consulting</option>
+<option value="1026" title="Manufacturing"  >Manufacturing</option>
+<option value="1027" title="Marketing Communications"  >Marketing Communications</option>
+<option value="1028" title="Medical/Health Services"  >Medical/Health Services</option>
+<option value="1029" title="Not-for-Profit"  >Not-for-Profit</option>
+<option value="1031" title="Pharmaceutical"  >Pharmaceutical</option>
+<option value="1032" title="Printing"  >Printing</option>
+<option value="1033" title="Product Design"  >Product Design</option>
+<option value="1034" title="Publishing, Media and Advertising"  >Publishing, Media and Advertising</option>
+<option value="1035" title="Real Estate"  >Real Estate</option>
+<option value="1036" title="Restaurant/Bakery"  >Restaurant/Bakery</option>
+<option value="1037" title="Retail"  >Retail</option>
+<option value="1038" title="Science"  >Science</option>
+<option value="1039" title="Service"  >Service</option>
+<option value="1030" title="Social Services"  >Social Services</option>
+<option value="1040" title="Software Publishing"  >Software Publishing</option>
+<option value="1041" title="Sports"  >Sports</option>
+<option value="1042" title="Technology/Computers"  >Technology/Computers</option>
+<option value="1043" title="Textiles"  >Textiles</option>
+<option value="1044" title="Transportation"  >Transportation</option>
+<option value="1045" title="Travel"  >Travel</option>
+<option value="1046" title="Utilities/Energy"  >Utilities/Energy</option>
+<option value="1047" title="Wholesale/Distribution"  >Wholesale/Distribution</option></select></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_job_titles">
+		<span class="tdcolor tms_profile_left">Job Title:</span>
+		<span class="tdcolor2 tms_profile_right"><input type="text" name="new_workhistory_job_titles" size="35" alt="Job Title:"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_company_locations">
+		<span class="tdcolor tms_profile_left">City/State: <span class='workhistory_star '>*</span></span>
+		<span class="tdcolor2 tms_profile_right"><input type="text" name="new_workhistory_company_locations" size="20" alt="City/State:"></span>
+      </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_start_date">
+		<span class="tdcolor tms_profile_left">Start Date: <span class='workhistory_star '>*</span></span>
+		<span class="tdcolor2 tms_profile_right">
+
+<input id="new_workhistory_start_date" name="workhistory_start_date" type="text" value="" size="10">
+			(yyyy-mm-dd)
+	    </span>
+       </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_end_date">
+		<span class="tdcolor tms_profile_left">End Date: <span class='workhistory_star '>*</span></span>
+		<span class="tdcolor2 tms_profile_right">
+<input id="new_workhistory_end_date" name="workhistory_end_date" type="text" value="" size="10">
+			(yyyy-mm-dd)
+			&nbsp; &nbsp; or &nbsp; &nbsp; <input id="new_workhistory_end_presents" name="new_workhistory_end_presents" type="checkbox" value="1" alt="present"><label for="new_workhistory_end_presents">present</label>
+		</span>
+       </div>
+      <div class="tms_profile_row" id="tms_profile_row_new_workhistory_job_descriptions">
+			<span class="tdcolor tms_profile_left">Duties: <span class='workhistory_star '>*</span></span>
+			<span class="tdcolor2 tms_profile_right">
+				<textarea rows="5" name="new_workhistory_job_descriptions" cols="35"></textarea>
+			</span>
+	   </div>
+ </div>
+</noscript>
+	
+
+
+
+
+
+<script language="JavaScript">
+/** eduhistory_form2html()
+ This function takes the forms values out of the eduhistory related
+ user input fields: and generated an HTML string
+ that will be used to represent/display it in the summary list.
+ The html string includes links to edit/delete this entry (and pass an
+  unSaved=true paramter to the normal functions so they know its an edit of
+  an entry that has not yet been saved to the db)
+*/
+function eduhistory_form2html( entryId, createOldEntry )
+{
+	var cur_degree = $('eduhistory_degree_level');
+	var DegreeName   = cur_degree.options[cur_degree.selectedIndex].text;
+
+    var newString = createOldEntry ? '' : 'new_'; //Mantis 0114053
+    var editingNewEntry = createOldEntry ? 'false' : 'true';
+
+	var eDate = $F('eduhistory_end_date');
+
+	var location = $F('eduhistory_school_location');
+	if (location == ',' || location == ', ' || location == ',  ') {
+		location = '';
+	}
+
+  newBlockContents = "<d"+"iv class='tms_33_left'><s"+"pan id='eduhistory_degree_level_"+entryId+"'>" + DegreeName + "<\/s"+"pan><\/d"+"iv><d"+"iv class='tms_33_left'><s"+"pan id='eduhistory_school_name_"+entryId+"'>" + $F('eduhistory_school_name') + "<\/s"+"pan><br \/><s"+"pan id='eduhistory_school_location_"+entryId+"'>"+location+"<\/s"+"pan><\/d"+"iv><d"+"iv class='tms_33_left'><span id='eduhistory_end_date_"+entryId+"'>"+eDate+"<\/s"+"pan><\/d"+"iv><br \/><d"+"iv class='tms_100_left whitespace' class='whitespace' id='eduhistory_school_description_"+entryId+"'>"+$F('eduhistory_school_description')+"<\/d"+"iv><br \/>";
+
+  newBlock = '';
+  if (!createOldEntry) {
+    newBlock += "<d"+"iv class='tms_history_item' id='" + newString + "eduhistory" + entryId +"'>";
+  }
+  newBlock += newBlockContents+"<d"+"iv class='tms_100_right'>";
+  if (createOldEntry) {
+    newBlock += "<s"+"pan id='editing_eduhistory" + entryId +"' >" + "<\/s"+"pan>";
+  }
+  newBlock += "<"+"a href='#eduhistory' onClick='edit_mList_entry( eduhistoryType, " + entryId +", " + editingNewEntry + " );' class='reg'>Edit<\/"+"a> :: <"+"a href='#' onclick='if(confirm(\"Are you sure you want to delete this entry for "+ $F('eduhistory_school_name') +"?\")){delete_mList_entry(eduhistoryType, " + entryId +", " + editingNewEntry + ");} return false;' class='reg'>Delete<\/"+"a><\/d"+"iv><d"+"iv class='tms_clear_both'></d"+"iv>";
+  if (!createOldEntry) {
+    newBlock += "<\/d"+"iv>";
+  }
+
+  return newBlock;
+}
+function eduhistory_validate()
+{
+	var eduValidated;
+	var edu_school = $('eduhistory_school_name').value;
+	var edu_locati = $('eduhistory_school_location').value;
+	var edu_comple = $('eduhistory_end_date').value;
+	var edu_degree = $('eduhistory_degree_level');
+	var my_degree  = edu_degree.options[edu_degree.selectedIndex].value;
+
+	if(edu_school == "" || edu_locati == "" || my_degree == ""){
+		alert("Please enter the required fields.");
+		return false;
+	}
+    if ( edu_comple != '' && !valid_date( edu_comple ) )
+    {
+        alert( "ERROR: Invalid Date Specified.\n" );
+		return false;
+    }
+
+	return true;
+}
+ eduhistoryType = { baseName: 'eduhistory',
+                      counterInt: 0,
+                      textFields : ['eduhistory_id','eduhistory_school_name','eduhistory_school_location',
+                                    'eduhistory_school_description','eduhistory_end_date'],
+                      selectFields : ['eduhistory_degree_level'],
+                      editMarkersDestination:'editing_eduhistory',
+                      entryList: 'eduhistory_list',
+                      entryListContainer: 'eduhistory_summary',
+                      entryStyles : {new_unsaved:'background-color:#FFFFCC', existing_deleted:'background-color:grey', existing_edited:'background-color:#FFCC66' },
+                      form2HtmlFunction : eduhistory_form2html,
+                      validateFunction : eduhistory_validate
+                    };
+</script>
+<br><a name="eduhistory"></a>
+
+<span class="tableheader tableline">Education</span>
+
+
+<div id="eduhistory_block" style="display: inline;"><!-- START eduhistory_block -->
+<!-- ###########EDUCATION HISTORY -->
+<div class="tms_profile_table">
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_eduhistory_block_min_entries">
+
+		For each entry you complete in this section, the fields marked with an asterisk (*) are required.
+
+      </div>
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_eduhistory_block_step_text"></div>
+          <div class="tms_profile_row">
+            <span class="tdcolor tms_profile_left"><label for="eduhistory_school_name">School/Program Name: <span class="eduhistory_star ">*</span></label></span>
+            <span class="tdcolor2 tms_profile_right"><input name="eduhistory_school_name" id="eduhistory_school_name" size="35" alt="School/Program Name:" type="text"></span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_eduhistory_school_location">
+            <span class="tdcolor tms_profile_left"><label for="eduhistory_school_location">School City, State &amp; Country: <span class="eduhistory_star ">*</span></label></span>
+            <span class="tdcolor2 tms_profile_right"><input name="eduhistory_school_location" id="eduhistory_school_location" size="30" alt="School City, State &amp; Country:" type="text"></span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_eduhistory_degree_level">
+            <span class="tdcolor tms_profile_left"><label for="eduhistory_degree_level">Degree/Level Attained: <span class="eduhistory_star ">*</span></label></span>
+            <span class="tdcolor2 tms_profile_right">
+                <select name="eduhistory_degree_level" id="eduhistory_degree_level"><option selected="selected" value="">--</option>
+<option value="4" title="Associate Degree">Associate Degree</option>
+<option value="5" title="Bachelor's Degree">Bachelor's Degree</option>
+<option value="11" title="BFA">BFA</option>
+<option value="2" title="Certification">Certification</option>
+<option value="7" title="Doctorate">Doctorate</option>
+<option value="1" title="High School or equivalent">High School or equivalent</option>
+<option value="6" title="Master's Degree">Master's Degree</option>
+<option value="10" title="Ph.D">Ph.D</option>
+<option value="8" title="Professional">Professional</option>
+<option value="9" title="Some College Coursework Completed">Some College Coursework Completed</option>
+<option value="3" title="Vocational">Vocational</option></select>
+			</span>
+		  </div>
+          <div class="tms_profile_row" id="tms_profile_row_eduhistory_end_date">
+            <span class="tdcolor tms_profile_left"><label for="eduhistory_end_date">Completion Date:</label></span>
+            <span class="tdcolor2 tms_profile_right">
+
+			<input id="eduhistory_end_date" name="eduhistory_end_date" size="10" type="text">
+			<img style="cursor: pointer;" src="assets_files/calendar_small.gif" title="Select a Date from the Calendar" alt="Select a Date from the Calendar" border="0">
+			(yyyy-mm-dd)
+			</span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_eduhistory_school_description">
+             <span class="tdcolor tms_profile_left"><label for="eduhistory_school_description">Description:</label></span>
+             <span class="tdcolor2 tms_profile_right"><input id="eduhistory_school_description" size="50" alt="Description" type="text"></span>
+          </div>
+          <div class="tms_profile_row">
+  <p>
+ Please make sure to click the "Add Education" button below to record the entry.
+ </p>
+ <p><input id="eduhistory_id" name="AWP" value="0" type="hidden">
+ <input onclick="save_mList_entry( eduhistoryType );" id="save_button_eduhistory" value="Add Education" alt="Add Education" class="button_js" type="button">
+ <input value="Cancel" alt="Cancel" onclick="reset_mList_fields(eduhistoryType );" class="button_js_2" id="cancel_button_eduhistory" type="button"></p>
+          </div>
+ </div>
+<div class="tms_profile_table tableline" id="tms_profile_eduhistory_summary">
+	<div class="tms_profile_row trcolor" id="tms_profile_row_eduhistory_summary_header1">
+		Education History Summary
+	</div>
+	<div class="tms_profile_row" id="tms_profile_row_eduhistory_summary_header2">
+		<div class="tdcolor tms_33_left"><b>Level</b></div>
+		<div class="tdcolor tms_33_left"><b>School</b></div>
+		<div class="tdcolor tms_33_left"><b>Date</b></div>
+	</div>
+	<div class="tms_profile_row" id="eduhistory_list">
+
+
+
+	</div>
+</div>
+<!-- END eduhistory_block -->
+</div>
+<script language="JavaScript">
+	$('eduhistory_block').style.display='inline';
+</script>
+
+
+
+
+<noscript>
+<input type="hidden" value="1" name="no_script">
+<input type="hidden" name="new_eduhistory_ids" value="-1">
+<div class="tms_profile_table tableline">
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_eduhistory_block_step_text_noscript"></div>
+          <div class="tms_profile_row" id="tms_profile_row_new_eduhistory_school_names">
+            <span class="tdcolor tms_profile_left">School/Program Name: <span class='eduhistory_star '>*</span></span>
+            <span class="tdcolor2 tms_profile_right"><input type="text" name="new_eduhistory_school_names" size="35" alt="School/Program Name:"></span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_new_eduhistory_school_locations">
+            <span class="tdcolor tms_profile_left">School City, State &amp; Country: <span class='eduhistory_star '>*</span></span>
+            <span class="tdcolor2 tms_profile_right"><input type="text" name="new_eduhistory_school_locations" size="30" alt="School City, State &amp; Country:"></span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_new_eduhistory_degree_levels">
+            <span class="tdcolor tms_profile_left">Degree/Level Attained: <span class='eduhistory_star '>*</span></span>
+            <span class="tdcolor2 tms_profile_right">
+                <select name="new_eduhistory_degree_levels"><option value="">--</option>
+<option value="4" title="Associate Degree"  >Associate Degree</option>
+<option value="5" title="Bachelor&#39;s Degree"  >Bachelor&#39;s Degree</option>
+<option value="11" title="BFA"  >BFA</option>
+<option value="2" title="Certification"  >Certification</option>
+<option value="7" title="Doctorate"  >Doctorate</option>
+<option value="1" title="High School or equivalent"  >High School or equivalent</option>
+<option value="6" title="Master&#39;s Degree"  >Master&#39;s Degree</option>
+<option value="10" title="Ph.D"  >Ph.D</option>
+<option value="8" title="Professional"  >Professional</option>
+<option value="9" title="Some College Coursework Completed"  >Some College Coursework Completed</option>
+<option value="3" title="Vocational"  >Vocational</option></select>
+			</span>
+		  </div>
+          <div class="tms_profile_row" id="tms_profile_row_new_eduhistory_end_date">
+            <span class="tdcolor tms_profile_left">Completion Date:</span>
+            <span class="tdcolor2 tms_profile_right">
+
+<input id="new_eduhistory_end_date" name="eduhistory_end_date" type="text" value="" size="10">
+			(yyyy-mm-dd)
+			</span>
+          </div>
+          <div class="tms_profile_row" id="tms_profile_row_new_eduhistory_school_descriptions">
+             <span class="tdcolor tms_profile_left">Description:</span>
+             <span class="tdcolor2 tms_profile_right"><input type="text" name="new_eduhistory_school_descriptions" size="50" alt="Description"></span>
+          </div>
+ </div>
+
+
+
+
+
+</noscript>
+
+
+
+
+
+
+<script language="JavaScript"> var certhistoryType= undefined;
+</script>
+
+
+
+
+<script language="JavaScript">
+/** references_form2html()
+ This function takes the forms values out of the references related
+ user input fields: and generated an HTML string
+ that will be used to represent/display it in the summary list.
+ The html string includes links to edit/delete this entry (and pass an
+  unSaved=true paramter to the normal functions so they know its an edit of
+  an entry that has not yet been saved to the db)
+*/
+function references_form2html( entryId, createOldEntry )
+{
+    var cur_ref_type = $('references_type');
+    var RefTypeName = cur_ref_type.options[cur_ref_type.selectedIndex].text;
+
+    var newString = createOldEntry ? '' : 'new_'; //Mantis 0114053
+    var editingNewEntry = createOldEntry ? 'false' : 'true';
+
+  newBlockContents = "<div class='tms_17_left'><span id='references_type_"+entryId+"'>"+RefTypeName+"<\/span><\/div><div class='tms_30_left'><span id='references_name_"+entryId+"'>"+$F('references_name')+"<\/span><\/div><div class='tms_17_left whitespace' id='references_note_"+entryId+"'>"+$F('references_note')+"<\/div><br \/>";
+
+  newBlock = '';
+
+  if (!createOldEntry) {
+    newBlock += "<div class='tms_history_item' id='" + newString + "references" + entryId +"'>";
+  }
+
+  newBlock += newBlockContents+"<div class='tms_100_right'>";
+  if (createOldEntry) {
+    newBlock += "<s"+"pan id='editing_references" + entryId +"' >" + "<\/s"+"pan>";
+  }
+  newBlock += "<a href='#references' onClick='edit_mList_entry( referencesType, " + entryId + ", " + editingNewEntry + " );' class='reg'>Edit<\/a> :: <a href='#' onclick='if(confirm(\"Are you sure you want to delete this entry for "+ $F('references_name') +"?\")){delete_mList_entry(referencesType, " + entryId +", " + editingNewEntry + ");} return false;' class='reg'>Delete<\/a><\/div><div class='tms_clear_both'></div>";
+
+  if (!createOldEntry) {
+    newBlock += "<\/div>";
+  }
+  return newBlock;
+}
+function references_validate()
+{
+	var refer_name = $('references_name').value;
+
+	if(refer_name == "" ){
+		alert("Please enter the required fields.");
+		return false;
+	}
+
+	return true;
+}
+ referencesType = { baseName: 'references',
+                      counterInt: 0,
+                      textFields : ['references_id','references_name','references_note'],
+                      selectFields : ['references_type'],
+                      editMarkersDestination:'editing_references',
+                      entryList: 'references_list',
+                      entryListContainer: 'references_summary',
+                      entryStyles : {new_unsaved:'background-color:#FFFFCC', existing_deleted:'background-color:grey', existing_edited:'background-color:#FFCC66' },
+                      form2HtmlFunction : references_form2html,
+                      validateFunction : references_validate
+                    };
+</script>
+<br><a name="references_block_link"></a>
+
+<span class="tableheader tableline">References</span>
+
+<div id="references_block" style="display: inline;"><!-- START references_block -->
+<div class="tms_profile_table" id="table2">
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_references_block_step_text"></div>
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_references_block_min_entries">
+
+For each entry you complete in this section, the fields marked with an asterisk (*) are required.
+
+      </div>
+    <div class="tms_profile_row" id="tms_profile_row_references_name">
+        <span class="tdcolor tms_profile_left"><label for="references_name">Full Name: <span class="reference_star ">*</span></label></span>
+        <span class="tdcolor2 tms_profile_right"><input size="40" id="references_name" alt="Full Name:" type="text"></span>
+    </div>
+    <div class="tms_profile_row" id="tms_profile_row_references_type">
+        <span class="tdcolor tms_profile_left"><label for="references_type">Type: <span class="reference_star ">*</span></label></span>
+        <span class="tdcolor2 tms_profile_right">
+            <select id="references_type">
+            <option selected="selected" value="1">Professional</option>
+            <option value="0">Personal</option>
+            </select>
+            
+        </span>
+    </div>
+   <div class="tms_profile_row" id="tms_profile_row_references_note">
+        <span class="tdcolor tms_profile_left"><label for="references_note">Details:</label></span>
+        <span class="tdcolor2 tms_profile_right"><textarea id="references_note" cols="35" rows="4"></textarea></span>
+   </div>
+   <div class="tms_profile_row">
+ <p>Please make sure to click the "Add Reference" button below to record the entry.</p>
+ <p><input id="references_id" name="AWP" value="0" type="hidden">
+ <input onclick="save_mList_entry( referencesType );" id="save_button_references" value="Add Reference" alt="Add Reference" class="button_js" type="button">
+ <input value="Cancel" alt="Cancel" onclick="reset_mList_fields(referencesType );" class="button_js_2" id="cancel_button_references" type="button"></p>
+ </div>
+</div>
+<script language="JavaScript">
+	function myReferences(my_id){
+		var myVAR = "references_name_"+my_id;
+		var myMSG = "Are you sure you want to delete this entry for " + $(myVAR).innerHTML + "?\n(Note: you must click the Submit button to have this item permanently removed.)";
+		if(confirm(myMSG)){
+			delete_mList_entry(referencesType, my_id )
+		}
+		return false;
+	}
+</script>
+<div class="tms_profile_table tableline" id="tms_profile_references_summary">
+	<div class="tms_profile_row trcolor" id="tms_profile_row_references_summary_header1">
+		References Summary
+	</div>
+	<div class="tms_profile_row" id="tms_profile_row_references_summary_header2">
+		<div class="tdcolor tms_17_left"><b>Type</b></div>
+		<div class="tdcolor tms_30_left"><b>Name</b></div>
+		<div class="tdcolor tms_48_left"><b>Details</b></div>
+	</div>
+	<div class="tms_profile_row" id="references_list">
+
+
+
+	</div>
+</div>
+<!-- END references_block -->
+</div>
+<script language="JavaScript">
+	$('references_block').style.display='inline';
+</script>
+
+
+
+<noscript>
+<input type="hidden" value="1" name="no_script">
+<input type="hidden" name="new_references_ids" value="-1">
+<div class="tms_profile_table">
+      <div class="tms_profile_row tdcolor" id="tms_profile_row_references_block_step_text_noscript"></div>
+    <div class="tms_profile_row" id="tms_profile_row_new_references_names">
+        <span class="tdcolor tms_profile_left">Full Name: <span class='reference_star '>*</span></span>
+        <span class="tdcolor2 tms_profile_right"><input type="text" size="40" name="new_references_names" alt="Full Name:"></span>
+    </div>
+    <div class="tms_profile_row" id="tms_profile_row_new_references_types">
+        <span class="tdcolor tms_profile_left">Type: <span class='reference_star '>*</span></span>
+        <span class="tdcolor2 tms_profile_right">
+            <select name="new_references_types">
+            <option value="1">Professional</option>
+            <option value="0">Personal</option>
+            </select>
+            
+        </span>
+    </div>
+   <div class="tms_profile_row" id="tms_profile_row_new_references_notes">
+        <span class="tdcolor tms_profile_left">Details:</span>
+        <span class="tdcolor2 tms_profile_right"><textarea name="new_references_notes" cols="35" rows="4"></textarea></span>
+   </div>
+</div>
+</noscript>
+
+
+
+
+
+
+
+
+
+<!-- ################################################
+	################################################# -->
+
+<br>
+<span class="tableheader tableline">Additional Information</span>
+<div id="extras_block" class="tms_profile_table"><!-- START extras_block -->
+
+    <div id="question_711_label" class="tms_question">
+<span class="tdcolor custom_q_desc tms_question_left">
+<label for="question_711">
+Have you, or a family member, ever been employed by Forever 21 or any of its affiliated companies?&nbsp;<span class="required">*</span>
+</label>
+
+
+</span>
+<span class="tdcolor2 tms_question_right">
+<select name="711" id="question_711">
+
+<option selected="selected" value="Yes">Yes</option>
+
+<option value="No">No</option>
+
+
+</select>
+    
+
+</span>
+</div>
+<script type="text/javascript">
+function validate_question_711( frm, template_only )
+{
+    fld = document.getElementsByName( '711' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '711' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '1' == '1' && !template_only )
+    {
+        chkd = false;
+        for(var i = 0; i < fld.options.length; ++i )
+        {
+            if ( fld.options[i].selected && fld.options[i].value != '')
+            {
+                chkd = true;
+            }
+        }
+        if ( ! chkd )
+        {
+            final_err_text += "\nError: Have you, or a family member, ever been employed by Forever 21 or any of its affiliated companies? is a required field";
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '' )
+        {
+            final_err_text += "\nError in Have you, or a family member, ever been employed by Forever 21 or any of its affiliated companies?: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_13_label" class="tms_question not_required">
+    <span class="tms_question_left not_required tdcolor custom_q_desc">
+<label for="question_13">
+    If yes, when and where
+</label>
+    
+    
+</span>
+<span class="tms_question_right tdcolor2">
+
+    <textarea name="13" id="question_13" rows="5" cols="40" onkeydown="CountLeft($('question_13'),$('q_13_left'),5000);" onkeyup="CountLeft($('question_13'),$('q_13_left'),5000);"></textarea>
+	<span class="tms_question_counter" style="display: none;"><span id="q_13_left">5000</span> out of 5000 characters remaining</span>
+    
+    
+</span>
+</div>
+    
+    
+<script type="text/javascript">
+function validate_question_13( frm, template_only )
+{
+    fld = document.getElementsByName( '13' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '13' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '0' == '1' && !template_only )
+    {
+        if ( fld.value == '' )
+        {
+            final_err_text += "\nError: If yes, when and where is a required field";
+            chkd = false;
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '')
+        {
+            final_err_text += "\nError in If yes, when and where: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_813_label" class="tms_question">
+<span class="tdcolor custom_q_desc tms_question_left">
+<label for="question_813">
+Have you been referred to us by a current Forever 21 Employee? &nbsp;<span class="required">*</span>
+</label>
+
+
+</span>
+<span class="tdcolor2 tms_question_right">
+<select name="813" id="question_813">
+
+<option selected="selected" value="Yes">Yes</option>
+
+<option value="No">No</option>
+
+
+</select>
+    
+
+</span>
+</div>
+<script type="text/javascript">
+function validate_question_813( frm, template_only )
+{
+    fld = document.getElementsByName( '813' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '813' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '1' == '1' && !template_only )
+    {
+        chkd = false;
+        for(var i = 0; i < fld.options.length; ++i )
+        {
+            if ( fld.options[i].selected && fld.options[i].value != '')
+            {
+                chkd = true;
+            }
+        }
+        if ( ! chkd )
+        {
+            final_err_text += "\nError: Have you been referred to us by a current Forever 21 Employee?  is a required field";
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '' )
+        {
+            final_err_text += "\nError in Have you been referred to us by a current Forever 21 Employee? : " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_713_label" class="tms_question not_required">
+    <span class="tms_question_left not_required tdcolor custom_q_desc">
+<label for="question_713">
+    If yes, please list the name of the employee.
+</label>
+    
+    
+</span>
+<span class="tms_question_right tdcolor2">
+
+    <textarea name="713" id="question_713" rows="5" cols="40" onkeydown="CountLeft($('question_713'),$('q_713_left'),5000);" onkeyup="CountLeft($('question_713'),$('q_713_left'),5000);"></textarea>
+	<span class="tms_question_counter" style="display: none;"><span id="q_713_left">5000</span> out of 5000 characters remaining</span>
+    
+    
+</span>
+</div>
+    
+    
+<script type="text/javascript">
+function validate_question_713( frm, template_only )
+{
+    fld = document.getElementsByName( '713' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '713' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '0' == '1' && !template_only )
+    {
+        if ( fld.value == '' )
+        {
+            final_err_text += "\nError: If yes, please list the name of the employee. is a required field";
+            chkd = false;
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '')
+        {
+            final_err_text += "\nError in If yes, please list the name of the employee.: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_793_label" class="tms_question">
+<span class="tdcolor custom_q_desc tms_question_left">
+<label for="question_793">
+<b><u>DO NOT ANSWER THE CRIMINAL HISTORY QUESTION(S)  BELOW AND SELECT “NOT APPLICABLE” IF YOU LIVE IN: The Following <i>STATES:</i> Hawaii, Massachusetts, Minnesota and Rhode Island; The Following <i>CITIES:</i> Baltimore, MD, Buffalo, NY, Newark, NJ, Philadelphia, PA and Seattle, WA.<br>
+
+CALIFORNIA Applicants Only:</u></b>For the question(s) below, you should
+ not disclose: (1) convictions which have been sealed, expunged or 
+statutorily eradicated (e.g., juvenile offense records); (2) misdemeanor
+ convictions for marijuana-related offenses which are more than two 
+years old; (3) misdemeanor convictions for which probation has been 
+completed or otherwise discharged and for which the case has been 
+dismissed by the court; and (4) any record regarding a referral to and 
+participation in any pretrial or post-trial diversion program.<br>
+<b><u> PENNSYLVANIA Applicants Only<i> (Outside the City of Philadelphia): </i></u></b>For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense.<br>
+<b><u>UTAH Applicants Only: </u></b> For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense. <b><u>WASHINGTON State Applicants Only <i>(Outside the City of Seattle): </i></u></b>For
+ the question(s) below, answer “yes” only if the conviction was for a 
+felony and it was within the last ten (10) years, or related to the 
+functions of the position for which you are applying.<br>
+<br>
+Have you ever been convicted of (or pleaded guilty or nolo contendere 
+to) a crime that has not been expunged, sealed, erased or pardoned?  A 
+conviction includes any plea, verdict or other finding of guilt 
+regardless of whether sentence is imposed by the court.&nbsp;<span class="required">*</span>
+</label>
+
+<img src="assets_files/info_small.gif" alt="Click to view info about this field" title="Click to view info about this field" onclick="alert(document.getElementById('helptext_793').innerHTML);" border="0">
+<div id="helptext_793" style="display:none;">
+	A felony or misdemeanor conviction does not automatically disqualify you for consideration of employment
+</div>
+
+
+</span>
+<span class="tdcolor2 tms_question_right">
+<select name="793" id="question_793">
+
+<option selected="selected" value="-">-</option>
+
+<option value="Yes">Yes</option>
+
+<option value="No">No</option>
+
+<option value="Not Applicable">Not Applicable</option>
+
+
+</select>
+    
+
+</span>
+</div>
+<script type="text/javascript">
+function validate_question_793( frm, template_only )
+{
+    fld = document.getElementsByName( '793' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '793' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '1' == '1' && !template_only )
+    {
+        chkd = false;
+        for(var i = 0; i < fld.options.length; ++i )
+        {
+            if ( fld.options[i].selected && fld.options[i].value != '')
+            {
+                chkd = true;
+            }
+        }
+        if ( ! chkd )
+        {
+            final_err_text += "\nError: <b><u>DO NOT ANSWER THE CRIMINAL HISTORY QUESTION(S)  BELOW AND SELECT “NOT APPLICABLE” IF YOU LIVE IN: The Following <i>STATES:</i> Hawaii, Massachusetts, Minnesota and Rhode Island; The Following <i>CITIES:</i> Baltimore, MD, Buffalo, NY, Newark, NJ, Philadelphia, PA and Seattle, WA.<br>
+
+CALIFORNIA Applicants Only:</b></u>For the question(s) below, you should not disclose: (1) convictions which have been sealed, expunged or statutorily eradicated (e.g., juvenile offense records); (2) misdemeanor convictions for marijuana-related offenses which are more than two years old; (3) misdemeanor convictions for which probation has been completed or otherwise discharged and for which the case has been dismissed by the court; and (4) any record regarding a referral to and participation in any pretrial or post-trial diversion program.<br>
+<b><u> PENNSYLVANIA Applicants Only<i> (Outside the City of Philadelphia): </b></u></i>For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense.<br>
+<b><u>UTAH Applicants Only: </b></u> For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense. <b><u>WASHINGTON State Applicants Only <i>(Outside the City of Seattle): </b></u></i>For the question(s) below, answer “yes” only if the conviction was for a felony and it was within the last ten (10) years, or related to the functions of the position for which you are applying.<br>
+<br>
+Have you ever been convicted of (or pleaded guilty or nolo contendere to) a crime that has not been expunged, sealed, erased or pardoned?  A conviction includes any plea, verdict or other finding of guilt regardless of whether sentence is imposed by the court. is a required field";
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '' )
+        {
+            final_err_text += "\nError in <b><u>DO NOT ANSWER THE CRIMINAL HISTORY QUESTION(S)  BELOW AND SELECT “NOT APPLICABLE” IF YOU LIVE IN: The Following <i>STATES:</i> Hawaii, Massachusetts, Minnesota and Rhode Island; The Following <i>CITIES:</i> Baltimore, MD, Buffalo, NY, Newark, NJ, Philadelphia, PA and Seattle, WA.<br>
+
+CALIFORNIA Applicants Only:</b></u>For the question(s) below, you should not disclose: (1) convictions which have been sealed, expunged or statutorily eradicated (e.g., juvenile offense records); (2) misdemeanor convictions for marijuana-related offenses which are more than two years old; (3) misdemeanor convictions for which probation has been completed or otherwise discharged and for which the case has been dismissed by the court; and (4) any record regarding a referral to and participation in any pretrial or post-trial diversion program.<br>
+<b><u> PENNSYLVANIA Applicants Only<i> (Outside the City of Philadelphia): </b></u></i>For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense.<br>
+<b><u>UTAH Applicants Only: </b></u> For the question(s) below, you may answer “No Record” with respect to any conviction for a misdemeanor or summary offense. <b><u>WASHINGTON State Applicants Only <i>(Outside the City of Seattle): </b></u></i>For the question(s) below, answer “yes” only if the conviction was for a felony and it was within the last ten (10) years, or related to the functions of the position for which you are applying.<br>
+<br>
+Have you ever been convicted of (or pleaded guilty or nolo contendere to) a crime that has not been expunged, sealed, erased or pardoned?  A conviction includes any plea, verdict or other finding of guilt regardless of whether sentence is imposed by the court.: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_785_label" class="tms_question not_required">
+    <span class="tms_question_left not_required tdcolor custom_q_desc">
+<label for="question_785">
+    If "Yes," please identify the nature of each crime for which you 
+were convicted, the date of each conviction(s), the city and state(s) in
+ which you were convicted and the disposition.  Please provide any 
+additional information about your conviction(s) tha
+</label>
+    
+    
+</span>
+<span class="tms_question_right tdcolor2">
+
+    <textarea name="785" id="question_785" rows="5" cols="40" onkeydown="CountLeft($('question_785'),$('q_785_left'),5000);" onkeyup="CountLeft($('question_785'),$('q_785_left'),5000);"></textarea>
+	<span class="tms_question_counter" style="display: none;"><span id="q_785_left">5000</span> out of 5000 characters remaining</span>
+    
+    
+</span>
+</div>
+    
+    
+<script type="text/javascript">
+function validate_question_785( frm, template_only )
+{
+    fld = document.getElementsByName( '785' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '785' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '0' == '1' && !template_only )
+    {
+        if ( fld.value == '' )
+        {
+            final_err_text += "\nError: If \"Yes,\" please identify the nature of each crime for which you were convicted, the date of each conviction(s), the city and state(s) in which you were convicted and the disposition.  Please provide any additional information about your conviction(s) tha is a required field";
+            chkd = false;
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '')
+        {
+            final_err_text += "\nError in If \"Yes,\" please identify the nature of each crime for which you were convicted, the date of each conviction(s), the city and state(s) in which you were convicted and the disposition.  Please provide any additional information about your conviction(s) tha: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_21_label" class="tms_question">
+<span class="tdcolor custom_q_desc tms_question_left">
+<label for="question_21">
+Are you, or any of your friends or relatives, a current or former vendor of the Company&nbsp;<span class="required">*</span>
+</label>
+
+
+</span>
+<span class="tdcolor2 tms_question_right">
+<select name="21" id="question_21">
+
+<option selected="selected" value="Yes">Yes</option>
+
+<option value="No">No</option>
+
+
+</select>
+    
+
+</span>
+</div>
+<script type="text/javascript">
+function validate_question_21( frm, template_only )
+{
+    fld = document.getElementsByName( '21' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '21' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '1' == '1' && !template_only )
+    {
+        chkd = false;
+        for(var i = 0; i < fld.options.length; ++i )
+        {
+            if ( fld.options[i].selected && fld.options[i].value != '')
+            {
+                chkd = true;
+            }
+        }
+        if ( ! chkd )
+        {
+            final_err_text += "\nError: Are you, or any of your friends or relatives, a current or former vendor of the Company is a required field";
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '' )
+        {
+            final_err_text += "\nError in Are you, or any of your friends or relatives, a current or former vendor of the Company: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+
+    <div id="question_22_label" class="tms_question not_required">
+<span class="tdcolor custom_q_desc tms_question_left">
+<label for="question_22">
+If yes, vendor name
+</label>
+
+
+</span>
+<span class="tdcolor2 tms_question_right">
+    <input name="22" id="question_22" size="0" maxlength="255" onkeydown="CountLeft($('question_22'),$('q_22_left'),255);" onkeyup="CountLeft($('question_22'),$('q_22_left'),255);" type="text">
+	<span class="tms_question_counter" style="display: none;"><span id="q_22_left">255</span> out of 255 characters remaining</span>
+    
+    
+</span>
+</div>
+<script type="text/javascript">
+function validate_question_22( frm, template_only )
+{
+    fld = document.getElementsByName( '22' );
+    myfld = fld;
+    for ( var i = 0; i < fld.length; ++i )
+    {
+        if ( fld[i].name == '22' )
+        {
+            myfld = fld[i];
+        }
+    }
+    fld = myfld;
+    if ( fld.length == 1 )
+    {
+        fld = fld[0];
+    }
+    var chkd = true;
+    if ( '0' == '1' && !template_only )
+    {
+        if ( fld.value == '' )
+        {
+            final_err_text += "\nError: If yes, vendor name is a required field";
+            chkd = false;
+        }
+    }
+    if ( chkd )
+    {
+        var errtext = '';
+        if (!template_only || (template_only && fld.getValue().length > '0' )) {
+            
+        }
+        if ( ! chkd && errtext != '')
+        {
+            final_err_text += "\nError in If yes, vendor name: " + errtext;
+        }
+    }
+    return chkd;
+}
+</script>
+
+
+<script type="text/javascript">
+function NewWindow(mypage, myname, w, h, scroll) {
+var winl = (screen.width - w) / 2;
+var wint = (screen.height - h) / 2;
+winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+win = window.open(mypage, myname, winprops)
+if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+function replace_question_row(rid,replacement,id)
+{
+    if ( ! id )
+    {
+        document.getElementById('allquestionhtml').innerHTML += replacement;
+    }
+    else
+    {
+        mytable = document.getElementById(id);
+        mytable.id = rid;
+        replacement = replacement.replace(/<table[^>]*>/g,'');
+        replacement = replacement.replace(/<\/table>/g,'');
+        mytable.innerHTML = replacement;
+    }
+}
+function validate_questions(frm,focusonerror,template_only)
+{
+    if ( ! frm.elements && frm.document )
+    {
+        frm = frm.document.forms[1];
+    }
+    retval = true;
+    var allquestions = '';
+    final_err_text = '';
+    for(var i=0;i<frm.elements.length;i++)
+    {
+        fld = frm.elements[i];
+        var coderef = window['validate_question_'+fld.name];
+        if ( typeof coderef == 'function' && allquestions.indexOf(fld.name+'|') == -1 )
+        {
+            allquestions += fld.name + '|';
+            if(!coderef(frm,template_only))
+            {
+                retval = false;
+            }
+        }
+    }
+    if ( ! retval && final_err_text != '' )
+    {
+        alert(final_err_text);
+        if ( focusonerror )
+        {
+            focusonerror.focus();
+        }
+    }
+    return retval;
+}
+</script>
+
+<div class="tms_clear_both"></div>
+<!-- END extras_block --></div>
+
+
+
+<br>
+<span class="tableheader tableline"><label for="resume">Your Resume <span id="resume_label" class="subhead required">*</span></label></span>
+<div class="tms_profile_table">
+	<div class="tms_profile_row tdcolor" id="tms_profile_row_resume_field_step_text"> You can copy and paste your resume from another source, or simply type in the space below.</div>
+    
+	<div class="tms_profile_row tdcolor2" id="tms_profile_row_resume">
+			<textarea style="visibility: hidden; display: none;" name="resume" id="resume" cols="70" rows="20"></textarea><div id="cke_resume" class="cke_1 cke cke_reset cke_chrome cke_editor_resume cke_ltr cke_browser_gecko" dir="ltr" role="application" aria-labelledby="cke_resume_arialbl" lang="en"><span id="cke_resume_arialbl" class="cke_voice_label">Rich Text Editor, resume</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; -moz-user-select: none;"><span id="cke_9" class="cke_voice_label">Editor toolbars</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_9" onmousedown="return false;"><span id="cke_14" class="cke_toolbar" aria-labelledby="cke_14_label" role="toolbar"><span id="cke_14_label" class="cke_voice_label">Document</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_15" class="cke_button cke_button__source  cke_button_off" title="Source" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(2,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onmousedown="return CKEDITOR.tools.callFunction(4,event);" onclick="CKEDITOR.tools.callFunction(5,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1824px;background-size:auto;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__source_label" aria-hidden="false">Source</span></a><a id="cke_16" class="cke_button cke_button__preview  cke_button_off" title="Preview" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(6,event);" onfocus="return CKEDITOR.tools.callFunction(7,event);" onmousedown="return CKEDITOR.tools.callFunction(8,event);" onclick="CKEDITOR.tools.callFunction(9,this);return false;"><span class="cke_button_icon cke_button__preview_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1632px;background-size:auto;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__preview_label" aria-hidden="false">Preview</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_17" class="cke_toolbar" aria-labelledby="cke_17_label" role="toolbar"><span id="cke_17_label" class="cke_voice_label">Clipboard/Undo</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_18" class="cke_button cke_button__cut cke_button_disabled " title="Cut" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(10,event);" onfocus="return CKEDITOR.tools.callFunction(11,event);" onmousedown="return CKEDITOR.tools.callFunction(12,event);" onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span class="cke_button_icon cke_button__cut_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -312px;background-size:auto;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__cut_label" aria-hidden="false">Cut</span></a><a id="cke_19" class="cke_button cke_button__copy cke_button_disabled " title="Copy" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(14,event);" onfocus="return CKEDITOR.tools.callFunction(15,event);" onmousedown="return CKEDITOR.tools.callFunction(16,event);" onclick="CKEDITOR.tools.callFunction(17,this);return false;"><span class="cke_button_icon cke_button__copy_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -264px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__copy_label" aria-hidden="false">Copy</span></a><a id="cke_20" class="cke_button cke_button__paste  cke_button_off" title="Paste" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(18,event);" onfocus="return CKEDITOR.tools.callFunction(19,event);" onmousedown="return CKEDITOR.tools.callFunction(20,event);" onclick="CKEDITOR.tools.callFunction(21,this);return false;"><span class="cke_button_icon cke_button__paste_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -360px;background-size:auto;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__paste_label" aria-hidden="false">Paste</span></a><a id="cke_21" class="cke_button cke_button__pastetext  cke_button_off" title="Paste as plain text" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(22,event);" onfocus="return CKEDITOR.tools.callFunction(23,event);" onmousedown="return CKEDITOR.tools.callFunction(24,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span class="cke_button_icon cke_button__pastetext_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1536px;background-size:auto;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__pastetext_label" aria-hidden="false">Paste as plain text</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_22" class="cke_button cke_button__undo cke_button_disabled " title="Undo" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_22_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(26,event);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onmousedown="return CKEDITOR.tools.callFunction(28,event);" onclick="CKEDITOR.tools.callFunction(29,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1992px;background-size:auto;">&nbsp;</span><span id="cke_22_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">Undo</span></a><a id="cke_23" class="cke_button cke_button__redo cke_button_disabled " title="Redo" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_23_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(30,event);" onfocus="return CKEDITOR.tools.callFunction(31,event);" onmousedown="return CKEDITOR.tools.callFunction(32,event);" onclick="CKEDITOR.tools.callFunction(33,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1944px;background-size:auto;">&nbsp;</span><span id="cke_23_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">Redo</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_24" class="cke_toolbar" aria-labelledby="cke_24_label" role="toolbar"><span id="cke_24_label" class="cke_voice_label">Editing</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_25" class="cke_button cke_button__find  cke_button_off" title="Find" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_25_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(34,event);" onfocus="return CKEDITOR.tools.callFunction(35,event);" onmousedown="return CKEDITOR.tools.callFunction(36,event);" onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span class="cke_button_icon cke_button__find_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -528px;background-size:auto;">&nbsp;</span><span id="cke_25_label" class="cke_button_label cke_button__find_label" aria-hidden="false">Find</span></a><a id="cke_26" class="cke_button cke_button__replace  cke_button_off" title="Replace" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_26_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(38,event);" onfocus="return CKEDITOR.tools.callFunction(39,event);" onmousedown="return CKEDITOR.tools.callFunction(40,event);" onclick="CKEDITOR.tools.callFunction(41,this);return false;"><span class="cke_button_icon cke_button__replace_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_26_label" class="cke_button_label cke_button__replace_label" aria-hidden="false">Replace</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_27" class="cke_button cke_button__selectall  cke_button_off" title="Select All" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_27_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(42,event);" onfocus="return CKEDITOR.tools.callFunction(43,event);" onmousedown="return CKEDITOR.tools.callFunction(44,event);" onclick="CKEDITOR.tools.callFunction(45,this);return false;"><span class="cke_button_icon cke_button__selectall_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1728px;background-size:auto;">&nbsp;</span><span id="cke_27_label" class="cke_button_label cke_button__selectall_label" aria-hidden="false">Select All</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_28" class="cke_toolbar" aria-labelledby="cke_28_label" role="toolbar"><span id="cke_28_label" class="cke_voice_label">Links</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_29" class="cke_button cke_button__link  cke_button_off" title="Link" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(46,event);" onfocus="return CKEDITOR.tools.callFunction(47,event);" onmousedown="return CKEDITOR.tools.callFunction(48,event);" onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1248px;background-size:auto;">&nbsp;</span><span id="cke_29_label" class="cke_button_label cke_button__link_label" aria-hidden="false">Link</span></a><a id="cke_30" class="cke_button cke_button__unlink cke_button_disabled " title="Unlink" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_30_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(50,event);" onfocus="return CKEDITOR.tools.callFunction(51,event);" onmousedown="return CKEDITOR.tools.callFunction(52,event);" onclick="CKEDITOR.tools.callFunction(53,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1272px;background-size:auto;">&nbsp;</span><span id="cke_30_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">Unlink</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_31" class="cke_toolbar" aria-labelledby="cke_31_label" role="toolbar"><span id="cke_31_label" class="cke_voice_label">Insert</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_32" class="cke_button cke_button__horizontalrule  cke_button_off" title="Insert Horizontal Line" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_32_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(54,event);" onfocus="return CKEDITOR.tools.callFunction(55,event);" onmousedown="return CKEDITOR.tools.callFunction(56,event);" onclick="CKEDITOR.tools.callFunction(57,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -888px;background-size:auto;">&nbsp;</span><span id="cke_32_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">Insert Horizontal Line</span></a><a id="cke_33" class="cke_button cke_button__specialchar  cke_button_off" title="Insert Special Character" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_33_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(58,event);" onfocus="return CKEDITOR.tools.callFunction(59,event);" onmousedown="return CKEDITOR.tools.callFunction(60,event);" onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1848px;background-size:auto;">&nbsp;</span><span id="cke_33_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">Insert Special Character</span></a><a id="cke_34" class="cke_button cke_button__pagebreak  cke_button_off" title="Insert Page Break for Printing" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_34_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(62,event);" onfocus="return CKEDITOR.tools.callFunction(63,event);" onmousedown="return CKEDITOR.tools.callFunction(64,event);" onclick="CKEDITOR.tools.callFunction(65,this);return false;"><span class="cke_button_icon cke_button__pagebreak_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1488px;background-size:auto;">&nbsp;</span><span id="cke_34_label" class="cke_button_label cke_button__pagebreak_label" aria-hidden="false">Insert Page Break for Printing</span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span><span id="cke_35" class="cke_toolbar" aria-labelledby="cke_35_label" role="toolbar"><span id="cke_35_label" class="cke_voice_label">Basic Styles</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_36" class="cke_button cke_button__bold  cke_button_off" title="Bold" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_36_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(66,event);" onfocus="return CKEDITOR.tools.callFunction(67,event);" onmousedown="return CKEDITOR.tools.callFunction(68,event);" onclick="CKEDITOR.tools.callFunction(69,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_36_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span></a><a id="cke_37" class="cke_button cke_button__italic  cke_button_off" title="Italic" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_37_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(70,event);" onfocus="return CKEDITOR.tools.callFunction(71,event);" onmousedown="return CKEDITOR.tools.callFunction(72,event);" onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_37_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span></a><a id="cke_38" class="cke_button cke_button__underline  cke_button_off" title="Underline" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_38_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(74,event);" onfocus="return CKEDITOR.tools.callFunction(75,event);" onmousedown="return CKEDITOR.tools.callFunction(76,event);" onclick="CKEDITOR.tools.callFunction(77,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_38_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">Underline</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_39" class="cke_button cke_button__removeformat  cke_button_off" title="Remove Format" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_39_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(78,event);" onfocus="return CKEDITOR.tools.callFunction(79,event);" onmousedown="return CKEDITOR.tools.callFunction(80,event);" onclick="CKEDITOR.tools.callFunction(81,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1680px;background-size:auto;">&nbsp;</span><span id="cke_39_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">Remove Format</span></a><a id="cke_40" class="cke_button cke_button__strike  cke_button_off" title="Strike Through" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_40_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(82,event);" onfocus="return CKEDITOR.tools.callFunction(83,event);" onmousedown="return CKEDITOR.tools.callFunction(84,event);" onclick="CKEDITOR.tools.callFunction(85,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_40_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">Strike Through</span></a><a id="cke_41" class="cke_button cke_button__subscript  cke_button_off" title="Subscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_41_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(86,event);" onfocus="return CKEDITOR.tools.callFunction(87,event);" onmousedown="return CKEDITOR.tools.callFunction(88,event);" onclick="CKEDITOR.tools.callFunction(89,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_41_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">Subscript</span></a><a id="cke_42" class="cke_button cke_button__superscript  cke_button_off" title="Superscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_42_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(90,event);" onfocus="return CKEDITOR.tools.callFunction(91,event);" onmousedown="return CKEDITOR.tools.callFunction(92,event);" onclick="CKEDITOR.tools.callFunction(93,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_42_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">Superscript</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_43" class="cke_toolbar" aria-labelledby="cke_43_label" role="toolbar"><span id="cke_43_label" class="cke_voice_label">Paragraph</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_44" class="cke_button cke_button__numberedlist  cke_button_off" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_44_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(94,event);" onfocus="return CKEDITOR.tools.callFunction(95,event);" onmousedown="return CKEDITOR.tools.callFunction(96,event);" onclick="CKEDITOR.tools.callFunction(97,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1368px;background-size:auto;">&nbsp;</span><span id="cke_44_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span></a><a id="cke_45" class="cke_button cke_button__bulletedlist  cke_button_off" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_45_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(98,event);" onfocus="return CKEDITOR.tools.callFunction(99,event);" onmousedown="return CKEDITOR.tools.callFunction(100,event);" onclick="CKEDITOR.tools.callFunction(101,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1320px;background-size:auto;">&nbsp;</span><span id="cke_45_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_46" class="cke_button cke_button__outdent cke_button_disabled " title="Decrease Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_46_label" aria-haspopup="false" aria-disabled="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(102,event);" onfocus="return CKEDITOR.tools.callFunction(103,event);" onmousedown="return CKEDITOR.tools.callFunction(104,event);" onclick="CKEDITOR.tools.callFunction(105,this);return false;"><span class="cke_button_icon cke_button__outdent_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1032px;background-size:auto;">&nbsp;</span><span id="cke_46_label" class="cke_button_label cke_button__outdent_label" aria-hidden="false">Decrease Indent</span></a><a id="cke_47" class="cke_button cke_button__indent  cke_button_off" title="Increase Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_47_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(106,event);" onfocus="return CKEDITOR.tools.callFunction(107,event);" onmousedown="return CKEDITOR.tools.callFunction(108,event);" onclick="CKEDITOR.tools.callFunction(109,this);return false;"><span class="cke_button_icon cke_button__indent_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -984px;background-size:auto;">&nbsp;</span><span id="cke_47_label" class="cke_button_label cke_button__indent_label" aria-hidden="false">Increase Indent</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_48" class="cke_button cke_button__justifyleft  cke_button_off" title="Align Left" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_48_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(110,event);" onfocus="return CKEDITOR.tools.callFunction(111,event);" onmousedown="return CKEDITOR.tools.callFunction(112,event);" onclick="CKEDITOR.tools.callFunction(113,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1128px;background-size:auto;">&nbsp;</span><span id="cke_48_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">Align Left</span></a><a id="cke_49" class="cke_button cke_button__justifycenter  cke_button_off" title="Center" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_49_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(114,event);" onfocus="return CKEDITOR.tools.callFunction(115,event);" onmousedown="return CKEDITOR.tools.callFunction(116,event);" onclick="CKEDITOR.tools.callFunction(117,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1104px;background-size:auto;">&nbsp;</span><span id="cke_49_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">Center</span></a><a id="cke_50" class="cke_button cke_button__justifyright  cke_button_off" title="Align Right" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_50_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(118,event);" onfocus="return CKEDITOR.tools.callFunction(119,event);" onmousedown="return CKEDITOR.tools.callFunction(120,event);" onclick="CKEDITOR.tools.callFunction(121,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1152px;background-size:auto;">&nbsp;</span><span id="cke_50_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">Align Right</span></a><a id="cke_51" class="cke_button cke_button__justifyblock  cke_button_off" title="Justify" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_51_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(122,event);" onfocus="return CKEDITOR.tools.callFunction(123,event);" onmousedown="return CKEDITOR.tools.callFunction(124,event);" onclick="CKEDITOR.tools.callFunction(125,this);return false;"><span class="cke_button_icon cke_button__justifyblock_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1080px;background-size:auto;">&nbsp;</span><span id="cke_51_label" class="cke_button_label cke_button__justifyblock_label" aria-hidden="false">Justify</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_52" class="cke_button cke_button__bidiltr  cke_button_off" title="Text direction from left to right" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_52_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(126,event);" onfocus="return CKEDITOR.tools.callFunction(127,event);" onmousedown="return CKEDITOR.tools.callFunction(128,event);" onclick="CKEDITOR.tools.callFunction(129,this);return false;"><span class="cke_button_icon cke_button__bidiltr_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -168px;background-size:auto;">&nbsp;</span><span id="cke_52_label" class="cke_button_label cke_button__bidiltr_label" aria-hidden="false">Text direction from left to right</span></a><a id="cke_53" class="cke_button cke_button__bidirtl  cke_button_off" title="Text direction from right to left" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_53_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(130,event);" onfocus="return CKEDITOR.tools.callFunction(131,event);" onmousedown="return CKEDITOR.tools.callFunction(132,event);" onclick="CKEDITOR.tools.callFunction(133,this);return false;"><span class="cke_button_icon cke_button__bidirtl_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -192px;background-size:auto;">&nbsp;</span><span id="cke_53_label" class="cke_button_label cke_button__bidirtl_label" aria-hidden="false">Text direction from right to left</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_54" class="cke_toolbar" aria-labelledby="cke_54_label" role="toolbar"><span id="cke_54_label" class="cke_voice_label">Colors</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_55" class="cke_button cke_button__textcolor cke_button_off " title="Text Color" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_55_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(134,event);" onfocus="return CKEDITOR.tools.callFunction(135,event);" onmousedown="return CKEDITOR.tools.callFunction(136,event);" onclick="CKEDITOR.tools.callFunction(137,this);return false;"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_55_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">Text Color</span><span class="cke_button_arrow"></span></a><a id="cke_56" class="cke_button cke_button__bgcolor cke_button_off " title="Background Color" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_56_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(138,event);" onfocus="return CKEDITOR.tools.callFunction(139,event);" onmousedown="return CKEDITOR.tools.callFunction(140,event);" onclick="CKEDITOR.tools.callFunction(141,this);return false;"><span class="cke_button_icon cke_button__bgcolor_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -384px;background-size:auto;">&nbsp;</span><span id="cke_56_label" class="cke_button_label cke_button__bgcolor_label" aria-hidden="false">Background Color</span><span class="cke_button_arrow"></span></a><a id="cke_57" class="cke_button cke_button__table  cke_button_off" title="Table" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_57_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(142,event);" onfocus="return CKEDITOR.tools.callFunction(143,event);" onmousedown="return CKEDITOR.tools.callFunction(144,event);" onclick="CKEDITOR.tools.callFunction(145,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url(https://forever21.tms.hrdepartment.com/editor/plugins/icons.png?t=E1PE);background-position:0 -1896px;background-size:auto;">&nbsp;</span><span id="cke_57_label" class="cke_button_label cke_button__table_label" aria-hidden="false">Table</span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span><span id="cke_58" class="cke_toolbar" aria-labelledby="cke_58_label" role="toolbar"><span id="cke_58_label" class="cke_voice_label">Styles</span><span class="cke_toolbar_start"></span><span id="cke_10" class="cke_combo cke_combo__styles  cke_combo_off" role="presentation"><span id="cke_10_label" class="cke_combo_label">Styles</span><a class="cke_combo_button" hidefocus="true" title="Formatting Styles" tabindex="-1" role="button" aria-labelledby="cke_10_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(147,event,this);" onmousedown="return CKEDITOR.tools.callFunction(149,event);" onfocus="return CKEDITOR.tools.callFunction(148,event);" onclick="CKEDITOR.tools.callFunction(146,this);return false;"><span id="cke_10_text" class="cke_combo_text cke_combo_inlinelabel">Styles</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_11" class="cke_combo cke_combo__format  cke_combo_off" role="presentation"><span id="cke_11_label" class="cke_combo_label">Format</span><a class="cke_combo_button" hidefocus="true" title="Paragraph Format" tabindex="-1" role="button" aria-labelledby="cke_11_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(151,event,this);" onmousedown="return CKEDITOR.tools.callFunction(153,event);" onfocus="return CKEDITOR.tools.callFunction(152,event);" onclick="CKEDITOR.tools.callFunction(150,this);return false;"><span id="cke_11_text" class="cke_combo_text cke_combo_inlinelabel">Format</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_12" class="cke_combo cke_combo__font  cke_combo_off" role="presentation"><span id="cke_12_label" class="cke_combo_label">Font</span><a class="cke_combo_button" hidefocus="true" title="Font Name" tabindex="-1" role="button" aria-labelledby="cke_12_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(155,event,this);" onmousedown="return CKEDITOR.tools.callFunction(157,event);" onfocus="return CKEDITOR.tools.callFunction(156,event);" onclick="CKEDITOR.tools.callFunction(154,this);return false;"><span id="cke_12_text" class="cke_combo_text cke_combo_inlinelabel">Font</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_13" class="cke_combo cke_combo__fontsize  cke_combo_off" role="presentation"><span id="cke_13_label" class="cke_combo_label">Size</span><a class="cke_combo_button" hidefocus="true" title="Font Size" tabindex="-1" role="button" aria-labelledby="cke_13_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(159,event,this);" onmousedown="return CKEDITOR.tools.callFunction(161,event);" onfocus="return CKEDITOR.tools.callFunction(160,event);" onclick="CKEDITOR.tools.callFunction(158,this);return false;"><span id="cke_13_text" class="cke_combo_text cke_combo_inlinelabel">Size</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolbar_end"></span></span></span></span><div style="height: 200px;" id="cke_1_contents" class="cke_contents cke_reset" role="presentation"><span id="cke_64" class="cke_voice_label">Press ALT 0 for help</span><iframe allowtransparency="true" tabindex="0" aria-describedby="cke_64" title="Rich Text Editor, resume" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" src="" frameborder="0"></iframe></div><span style="-moz-user-select: none;" id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation"><span id="cke_1_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="Resize" onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span><span id="cke_1_path_label" class="cke_voice_label">Elements path</span><span id="cke_1_path" class="cke_path" role="group" aria-labelledby="cke_1_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div>
+			</div>
+            
+            <script language="JavaScript">
+                CKEDITOR.replace( 'resume', {
+                customConfig: '/cgi-bin/ck_language_config.cgi?side=a&lcid=en-US',
+                toolbar: 'Default'          
+                });
+            </script>
+            
+	</div>
+</div>
+
+
+
+
+<br>
+<span class="tableheader tableline">Referral Source</span>
+<div class="tms_profile_table" id="referral_block"><!-- START referral_block -->
+
+		
+
+		<div class="tms_profile_row" id="tms_profile_row_referralsource">
+          <span class="tdcolor tms_profile_left"><label for="referralsource">How did you hear about us?: <span class="required">*</span></label>
+         </span>
+          <span class="tdcolor2 tms_profile_right">
+
+<select name="referralsource" id="referralsource"><option selected="selected" value="">--</option><option value="103">Allretailjobs.com</option>
+<option value="94">ASU - Arizona State University</option>
+<option value="106">BU - Boston University</option>
+<option value="82">CareerBuilder.com</option>
+<option value="123">Chinese Daily News</option>
+<option value="96">Craigslist.com</option>
+<option value="83">Employee Referral (Current Forever 21 Employee)</option>
+<option value="-98">Facebook.com</option>
+<option value="102">Fashionjobs.com</option>
+<option value="124">FashionUnited.com</option>
+<option value="116">FIDM - Fashion Institue of Design and Merchandising</option>
+<option value="114">FIT - Fashion Institute of Technology</option>
+<option value="91">FLSU - Florida State University</option>
+<option value="89">Forever21.com Career Site</option>
+<option value="121">Google.com</option>
+<option value="85">HotJobs.com</option>
+<option value="120">Indeed.com</option>
+<option value="125">InRetail.com</option>
+<option value="86">Job Fair / Career Fair</option>
+<option value="101">Jobing.com</option>
+<option value="-96">JobsInLogistics.com</option>
+<option value="122">Korea Times</option>
+<option value="112">La Opinion Newspaper</option>
+<option value="93">LinkedIn.com</option>
+<option value="95">LPJobs.com</option>
+<option value="111">LSU - Louisiana State University</option>
+<option value="127">Lux Fine</option>
+<option value="126">Lux Talent</option>
+<option value="99">MayoroftheMall.com</option>
+<option value="87">Monster.com</option>
+<option value="92">Monster Resume Database</option>
+<option value="108">NDSU - North Dakota State University</option>
+<option value="107">NFLU - Northern Florida University</option>
+<option value="90">Other Source (not listed)</option>
+<option value="117">OTIS - Otis College of Art &amp; Design</option>
+<option value="115">Parsons</option>
+<option value="88">Pepperdine University</option>
+<option value="81">Print Advertisement</option>
+<option value="128">Recruiter Contacted</option>
+<option value="119">Represented by Agency</option>
+<option value="-94">RSS Feed</option>
+<option value="118">SCAD - Savannah College of Art and Design</option>
+<option value="100">ShopTheJobs.com</option>
+<option value="97">SHRM Website</option>
+<option value="104">Stylecareers.com</option>
+<option value="113">TAMU - Texas A&amp;M University</option>
+<option value="-97">Twitter</option>
+<option value="-99">UCLA - Univ. of Southern California</option>
+<option value="98">UCSB - Univ. of California at Santa Barbara</option>
+<option value="109">UH -University of Houston</option>
+<option value="80">University of Miami</option>
+<option value="105">UNLV - University of Las Vegas</option>
+<option value="110">USC - Univ. of Southern California</option>
+<option value="84">Word of Mouth / Networking</option>
+</select>
+         </span>
+        </div>
+        <div class="tms_profile_row" id="tms_profile_row_referrer">
+          <span class="tdcolor tms_profile_left"><label for="referrer">If you were referred to us by an employee or a staffing agency, please indicate who:&nbsp;</label></span>
+          <span class="tdcolor2 tms_profile_right"><input id="referrer" maxlength="250" name="referrer" size="35" alt="If you were referred to us by an employee or a staffing agency, please indicate who" type="text"></span>
+        </div>
+</div>
+
+
+<br>
+<span class="tableheader tableline">Create a Username &amp; Password</span>
+<div class="tms_profile_table">
+    <div class="tms_profile_row" id="tms_profile_row_username">
+      <span class="tdcolor tms_profile_left"><label for="username">Username: <span class="required">*</span></label></span>
+     <span class="tdcolor2 tms_profile_right"><input id="username" name="username" size="40" alt="Username" type="text">
+     <br><small>TIP: Using your email address as your username will make it easier to remember.</small></span>
+    </div>
+    <div class="tms_profile_row" id="tms_profile_row_password">
+      <span class="tdcolor tms_profile_left"><label for="password">Password: <span class="required">*</span></label></span>
+      <span class="tdcolor2 tms_profile_right"><input id="password" name="password" size="15" maxlength="50" value="" alt="Password" type="password"></span>
+    </div>
+    <div class="tms_profile_row" id="tms_profile_row_password2">
+      <span class="tdcolor tms_profile_left"><label for="password2">Re-enter Password: <span class="required">*</span></label></span>
+      <span class="tdcolor2 tms_profile_right"><input id="password2" name="password2" size="15" maxlength="50" value="" alt="Re-enter Password" type="password"></span>
+    </div>
+</div>
+<input name="monster_resumeid" value="" type="hidden">
+<input name="monster_resumevalue" value="" type="hidden">
+
+<!-- END referral_block -->
+<div class="tms_profile_table">
+<p id="tms_profile_termsofuse">
+<input id="agree2terms" name="agree2terms" value="1" alt="terms of use" type="checkbox"> <label for="agree2terms"><a name="tos"></a>Check this box to indicate you have read and agree to our <a href="https://forever21.tms.hrdepartment.com/cgi-bin/a/terms_of_use.cgi" onclick="window.open('/cgi-bin/a/terms_of_use.cgi','_blank','width=600,height=400,scrollbars=yes'); return false;" class="reg_js" target="_blank">terms of use</a>.<span class="required">*</span></label>
+</p>
+  <input name="jobid" value="" type="hidden">
+
+<p id="tms_profile_submit_buttons">
+<input name="submit_complete_resume" value="Continue &gt;&gt;&gt;" alt="Continue &gt;&gt;&gt;" class="button_js" type="submit">
+
+		
+			&nbsp;&nbsp;<input name="partial_submit" value="Finish Later" alt="Finish Later" class="button_js_2" onclick="bypassquestionvalidation=1;" type="submit">
+		
+
+</p>
+<input name="is_searchable" value="" type="hidden">
+<div class="tms_clear_both"></div>
+</div>
+<script language="JavaScript">
+	var theRequiredFields = "['fname','lname','email','agree2terms','address1','city','state','country','referralsource','zip','phone1','travel','category','joblevel','jobtype','work_auth_countries','resume']";
+
+	
+
+	
+
+/* highlight_required_fields(item)
+*  for now will mark any coresponding element with id=item+'_label' as class='required'
+*  but could easily do more
+*/
+function highlight_required_fields(item)
+{
+	if( $(item + '_label') != undefined )
+	{
+		Element.addClassName(item + '_label', 'required' );
+	}
+}
+</script>
+
+
+
+
+
+
+
+<script language="JavaScript">
+var workhistory_entries = new Array(  );
+if ( workhistory_entries.length > 0 )
+{
+	auto_populate_mList_entries( workhistoryType, workhistory_entries );
+}
+
+var eduhistory_entries = new Array(  );
+if ( eduhistory_entries.length > 0 )
+{
+	auto_populate_mList_entries(eduhistoryType, eduhistory_entries );
+}
+
+var certhistory_entries = new Array(  );
+if ( certhistory_entries.length > 0 )
+{
+	auto_populate_mList_entries(certhistoryType, certhistory_entries );
+}
+
+var reference_entries = new Array(  );
+if ( reference_entries.length > 0 )
+{
+	auto_populate_mList_entries(referencesType, reference_entries );
+}
+</script>
+
+</form>
+
+
+<div></div>
+
+</div>
+<hr class="bottom5">
+<p style="text-align:center;margin:0;"><img src="assets_files/brands.jpg" style="border: none;" alt="Forever21 Brands"></p>
+<hr class="bottom">
+
+<script src="assets_files/bluestreak.js"></script>
+
+
+
+
+
+
+
+
+<div style="position: absolute; display: none; left: 444px; top: 2107px;" class="calendar"><table style="visibility: visible;" cellpadding="0" cellspacing="0"><thead><tr><td class="button" colspan="1"><div unselectable="on">?</div></td><td style="cursor: move;" class="title" colspan="5">November, 2014</td><td class="button" colspan="1"><div unselectable="on">×</div></td></tr><tr class="headrow"><td class="button nav" colspan="1"><div unselectable="on">«</div></td><td class="button nav" colspan="1"><div unselectable="on">‹</div></td><td class="button" colspan="3"><div unselectable="on">Today</div></td><td class="button nav" colspan="1"><div unselectable="on">›</div></td><td class="button nav" colspan="1"><div unselectable="on">»</div></td></tr><tr class="daynames"><td class="name day weekend">Sun</td><td class="day name">Mon</td><td class="day name">Tue</td><td class="day name">Wed</td><td class="day name">Thu</td><td class="day name">Fri</td><td class="name day weekend">Sat</td></tr></thead><tbody><tr class="daysrow"><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="day weekend">1</td></tr><tr class="daysrow"><td class="day weekend">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day weekend">8</td></tr><tr class="daysrow"><td class="day weekend">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day weekend">15</td></tr><tr class="daysrow"><td class="day weekend">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day weekend">22</td></tr><tr class="daysrow"><td class="day weekend">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day weekend">29</td></tr><tr class="daysrow"><td class="day selected today weekend">30</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td></tr></tbody><tfoot><tr class="footrow"><td style="cursor: move;" class="ttip" colspan="7"><div unselectable="on">Select date</div></td></tr></tfoot></table><div class="combo"><div class="label">Jan</div><div class="label">Feb</div><div class="label">Mar</div><div class="label">Apr</div><div class="label">May</div><div class="label">Jun</div><div class="label">Jul</div><div class="label">Aug</div><div class="label">Sep</div><div class="label">Oct</div><div class="label">Nov</div><div class="label">Dec</div></div>
+<div class="combo"><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div></div>
+</div><div style="position: absolute; display: none; left: 444px; top: 2107px;" class="calendar"><table style="visibility: visible;" cellpadding="0" cellspacing="0"><thead><tr><td class="button" colspan="1"><div unselectable="on">?</div></td><td style="cursor: move;" class="title" colspan="5">November, 2014</td><td class="button" colspan="1"><div unselectable="on">×</div></td></tr><tr class="headrow"><td class="button nav" colspan="1"><div unselectable="on">«</div></td><td class="button nav" colspan="1"><div unselectable="on">‹</div></td><td class="button" colspan="3"><div unselectable="on">Today</div></td><td class="button nav" colspan="1"><div unselectable="on">›</div></td><td class="button nav" colspan="1"><div unselectable="on">»</div></td></tr><tr class="daynames"><td class="name day weekend">Sun</td><td class="day name">Mon</td><td class="day name">Tue</td><td class="day name">Wed</td><td class="day name">Thu</td><td class="day name">Fri</td><td class="name day weekend">Sat</td></tr></thead><tbody><tr class="daysrow"><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="day weekend">1</td></tr><tr class="daysrow"><td class="day weekend">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day weekend">8</td></tr><tr class="daysrow"><td class="day weekend">9</td><td class="day">10</td><td class="selected day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day weekend">15</td></tr><tr class="daysrow"><td class="day weekend">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day weekend">22</td></tr><tr class="daysrow"><td class="day weekend">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day weekend">29</td></tr><tr class="daysrow"><td class="weekend today day">30</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td></tr></tbody><tfoot><tr class="footrow"><td style="cursor: move;" class="ttip" colspan="7">Select date</td></tr></tfoot></table><div style="display: none;" class="combo"><div class="label">Jan</div><div class="label">Feb</div><div class="label">Mar</div><div class="label">Apr</div><div class="label">May</div><div class="label">Jun</div><div class="label">Jul</div><div class="label">Aug</div><div class="label">Sep</div><div class="label">Oct</div><div class="label">Nov</div><div class="label">Dec</div></div>
+<div style="display: none;" class="combo"><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div></div>
+</div><div style="position: absolute; display: none; left: 444px; top: 2107px;" class="calendar"><table style="visibility: visible;" cellpadding="0" cellspacing="0"><thead><tr><td class="button" colspan="1"><div unselectable="on">?</div></td><td style="cursor: move;" class="title" colspan="5">October, 2014</td><td class="button" colspan="1"><div unselectable="on">×</div></td></tr><tr class="headrow"><td class="button nav" colspan="1"><div unselectable="on">«</div></td><td class="button nav" colspan="1"><div unselectable="on">‹</div></td><td class="button" colspan="3"><div unselectable="on">Today</div></td><td class="button nav" colspan="1"><div unselectable="on">›</div></td><td class="button nav" colspan="1"><div unselectable="on">»</div></td></tr><tr class="daynames"><td class="name day weekend">Sun</td><td class="day name">Mon</td><td class="day name">Tue</td><td class="day name">Wed</td><td class="day name">Thu</td><td class="day name">Fri</td><td class="name day weekend">Sat</td></tr></thead><tbody><tr class="daysrow"><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="selected day">1</td><td class="day">2</td><td class="day">3</td><td class="day weekend">4</td></tr><tr class="daysrow"><td class="day weekend">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="weekend day">11</td></tr><tr class="daysrow"><td class="day weekend">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day weekend">18</td></tr><tr class="daysrow"><td class="day weekend">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day weekend">25</td></tr><tr class="daysrow"><td class="day weekend">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="emptycell">&nbsp;</td></tr><tr class="emptyrow"><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td></tr></tbody><tfoot><tr class="footrow"><td style="cursor: move;" class="ttip" colspan="7">Select date</td></tr></tfoot></table><div style="display: none;" class="combo"><div class="label">Jan</div><div class="label">Feb</div><div class="label">Mar</div><div class="label">Apr</div><div class="label">May</div><div class="label">Jun</div><div class="label">Jul</div><div class="label">Aug</div><div class="label">Sep</div><div class="label">Oct</div><div class="label">Nov</div><div class="label">Dec</div></div>
+<div style="display: none;" class="combo"><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div></div>
+</div><div style="position: absolute; display: none; left: 444px; top: 2133px;" class="calendar"><table style="visibility: visible;" cellpadding="0" cellspacing="0"><thead><tr><td class="button" colspan="1"><div unselectable="on">?</div></td><td style="cursor: move;" class="title" colspan="5">November, 2014</td><td class="button" colspan="1"><div unselectable="on">×</div></td></tr><tr class="headrow"><td class="button nav" colspan="1"><div unselectable="on">«</div></td><td class="button nav" colspan="1"><div unselectable="on">‹</div></td><td class="button" colspan="3"><div unselectable="on">Today</div></td><td class="button nav" colspan="1"><div unselectable="on">›</div></td><td class="button nav" colspan="1"><div unselectable="on">»</div></td></tr><tr class="daynames"><td class="name day weekend">Sun</td><td class="day name">Mon</td><td class="day name">Tue</td><td class="day name">Wed</td><td class="day name">Thu</td><td class="day name">Fri</td><td class="name day weekend">Sat</td></tr></thead><tbody><tr class="daysrow"><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="day weekend">1</td></tr><tr class="daysrow"><td class="day weekend">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day weekend">8</td></tr><tr class="daysrow"><td class="day weekend">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day weekend">15</td></tr><tr class="daysrow"><td class="day weekend">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day weekend">22</td></tr><tr class="daysrow"><td class="day weekend">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day weekend">29</td></tr><tr class="daysrow"><td class="weekend today day selected">30</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td><td class="emptycell">&nbsp;</td></tr></tbody><tfoot><tr class="footrow"><td style="cursor: move;" class="ttip" colspan="7">Select date</td></tr></tfoot></table><div style="display: none;" class="combo"><div class="label">Jan</div><div class="label">Feb</div><div class="label">Mar</div><div class="label">Apr</div><div class="label">May</div><div class="label">Jun</div><div class="label">Jul</div><div class="label">Aug</div><div class="label">Sep</div><div class="label">Oct</div><div class="label">Nov</div><div class="label">Dec</div></div>
+<div style="display: none;" class="combo"><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div><div class="label"></div></div>
+</div></body></html>

@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>::TalentCord::</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><br>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+
+
+var  timerId=0 ;
+
+
+
+function clearTimer() {
+  if (timerId!=0) {
+    clearTimeout(timerId); timerId=0; }}
+
+
+
+function startTimer() {
+  clearTimer(); timerId=setTimeout('timerId=0;hideMenus()',200); }
+
+
+
+function showMenu(menuNum) {
+  clearTimer(); hideMenus();
+  document.getElementById('menu_'+menuNum).style.display=""; }
+
+
+
+function hideMenus() {
+  var  i=2 ;
+  while (document.getElementById('menu_'+i)) {
+    document.getElementById('menu_'+i).style.display="none";
+    i++; }}
+
+
+
+function hiLite(theOption) {
+  clearTimer();
+  document.getElementById('opt_'+theOption).style.color='#41b9ce'; }
+
+
+
+function unLite(theOption) {
+  startTimer();
+  document.getElementById('opt_'+theOption).style.color='#000000'; }
+
+
+
+function optClick(theOption) {
+  unLite(theOption); clearTimer(); hideMenus();
+  alert('You clicked option '+theOption.toUpperCase()+'.  '+
+  'This code should actually do something in response to that.'); }
+
+
+
+//-->
+</SCRIPT>
+
+
+<STYLE TYPE="text/css">
+<!--
+
+.popupMenu {
+  font-family     : Roboto,Helvetica,Arial;
+  font-size       :     14px;
+  color      	  :  #41b9ce;
+  position        : absolute;
+  top             :     140px;
+  border          :      1px;
+  padding         :      2px;
+  z-index         :       16;
+  background-color:  #FFFFFF;
+  cursor          :  pointer; }
+
+-->
+</STYLE>
+</head>
+<body onclick="hideMenus();" bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (tlc_home.psd) -->
+<table id="Table_01" width="1024" height="642" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="9">
+			<img src="images/spacer.gif" width="1023" height="25" alt=""></td>
+		<td width="4">
+			<img src="images/spacer.gif" width="1" height="25" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/spacer.gif" width="558" height="12" alt=""></td>
+		<td width="150" rowspan="3">
+			<img src="images/tlc_home_03_down.gif" width="145" height="90" 
+			onmouseover="this.src='images/tlc_home_03.gif';showMenu(2);"
+            onmouseout="this.src='images/tlc_home_03_down.gif';startTimer();">
+		  </td>
+		<td width="5" rowspan="4">
+			<img src="images/tlc_home_04.gif" width="1" height="78" alt=""></td>
+		<td colspan="2" rowspan="3">
+			<a href="talentcord" 
+			onclick="location.href='register.php';return false;" > <img src="images/tlc_home_05_down.gif" width="145" height="90" 
+			onmouseover="this.src='images/tlc_home_05.gif';"
+            onmouseout="this.src='images/tlc_home_05_down.gif';"></a> 
+			</td>
+		<td width="9" rowspan="11">
+			<img src="images/spacer.gif" width="7" height="588" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="12" alt=""></td>
+	</tr>
+	<tr>
+		<td width="12" rowspan="10">
+			<img src="images/spacer.gif" width="1" height="576" alt=""></td>
+		<td colspan="2">
+			<img src="images/tlc_home_08.gif" width="245" height="54" alt=""></td>
+		<td width="454" rowspan="6">
+			<img src="images/spacer.gif" width="372" height="123" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="41" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="5" valign="top">
+			<img src="images/tlc_home_lang_10.gif" width="220" height="20" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="24" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/tlc_home_11.gif" width="118" height="1" alt=""></td>
+		<td colspan="2" rowspan="5">
+			<img src="images/spacer.gif" width="116" height="208" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="4">
+		<img src="images/spacer.gif" width="145" height="208" alt="">
+		<DIV CLASS="popupMenu" ID="menu_2" STYLE="display:none;">
+			<TABLE BORDER="0" CELLSPACING="4" CELLPADDING="0">
+			<TR ID="opt_seek"><TD><A ONMOUSEOVER="hiLite('seek')" ONMOUSEOUT="unLite('seek')" onclick="location.href='index.php?acct=seek';return false;" >&nbsp;&nbsp;as job seeker&nbsp;&nbsp;</A></TD></TR>
+			<TR ID="opt_seek" bgcolor="#41b9ce"><TD><img src="images/spacer.gif" width="135" height="1" alt=""></TD></TR>
+			<TR ID="opt_emp"><TD><A ONMOUSEOVER="hiLite('emp')" ONMOUSEOUT="unLite('emp')" onclick="location.href='index.php?acct=emp';return false;">&nbsp;&nbsp;as employer&nbsp;&nbsp;</A></TD></TR>
+			<TR ID="opt_emp" bgcolor="#41b9ce"><TD><img src="images/spacer.gif" width="135" height="1" alt=""></TD></TR>
+			</TABLE>
+		</DIV>
+		
+		</td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="19" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="1" height="24" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="1" height="14" alt=""></td>
+	</tr>
+	<tr>
+		<td width="86" rowspan="4">
+			<img src="images/spacer.gif" width="65" height="453" alt=""></td>
+		<td colspan="2" rowspan="3">
+			<img src="images/tlc_home_18.gif" width="483" height="404" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="150" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;			</td>
+		<td width="55" rowspan="3">
+			<img src="images/tlc_home_20.gif" width="43" height="303" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="88" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3" rowspan="2">
+			<img src="images/spacer.gif" width="145" height="215" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="166" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/spacer.gif" width="483" height="49" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="49" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="10" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="65" height="1" alt=""></td>
+		<td width="159">
+			<img src="images/spacer.gif" width="120" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="363" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="118" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+		<td width="94">
+			<img src="images/spacer.gif" width="73" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="43" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="7" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>
